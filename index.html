@@ -1,0 +1,1965 @@
+<meta charset="utf-8">
+<title>Ильющенкова Бухгалтерия</title>
+<meta name="description" id="metaDesc" content="Бухгалтерское сопровождение ИП и ООО в Брянске: отчётность в срок, налоги заранее, ответственность в договоре. Личный бухгалтер Светлана Ильющенкова.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* Основа взята из нашего проекта Глав (Mulish, синий, пилюли, плиты со скруглением).
+   Отступления: своя роль второго цвета (янтарь = сроки и НДС), мотив линовки как у бухгалтерской
+   ведомости, линейные ряды вместо сплошных карточных сеток, свой набор иконок. */
+:root{
+  /* поверхности */
+  --bg:#eef1f6; --card:#ffffff; --plate:#f7f8fb;
+  --line:#e3e8f0; --line-2:#d6dce7;
+  /* текст */
+  --ink:#1d2430; --ink-2:#59616f; --ink-3:#697180;
+  /* действие */
+  --blue:#1f6fd0; --blue-2:#175aab; --blue-soft:#e8f1fc; --blue-soft-2:#d3e5fa;
+  --blue-grad:linear-gradient(96deg,#2f86e0 0%,#175aab 100%);
+  /* сроки, налоговый календарь, НДС */
+  --amber:#a4661a; --amber-2:#8a5514; --amber-soft:#fdf0dd; --amber-line:#f0d5ab;
+  --amber-grad:linear-gradient(96deg,#d99236 0%,#a4661a 100%);
+  /* состояние «входит в пакет» */
+  --green:#1c8459; --green-soft:#e3f4ec;
+  /* мотив линовки */
+  --rule:color-mix(in srgb, var(--ink) 7%, transparent);
+  /* подвал: тёмная панель в светлой теме */
+  --foot-bg:#1a2130; --foot-ink:#aeb7c6; --foot-head:#77829a; --foot-strong:#ffffff;
+  --foot-line:rgba(255,255,255,.12); --foot-accent:#9cc3f2;
+  --foot-grad:linear-gradient(165deg,#232d42 0%,#141a27 100%);
+  --font:"Mulish", system-ui, -apple-system, sans-serif;
+  --r-card:24px; --r-mid:16px; --r-field:12px; --pill:100px;
+  --sh-sm:0 1px 2px rgba(20,30,50,.05), 0 8px 20px -14px rgba(20,30,50,.28);
+  --sh:0 2px 4px rgba(20,30,50,.04), 0 26px 56px -34px rgba(20,30,50,.38);
+  --sh-blue:0 8px 18px -10px rgba(31,111,208,.55);
+  --ease:cubic-bezier(.2,.8,.25,1); --dur:.18s;
+  /* шкала интервалов, шаг 4 */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px; --s9:104px;
+  --maxw:1180px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f141c; --card:#161d27; --plate:#131922;
+    --line:#252e3b; --line-2:#2f3a49;
+    --ink:#e9edf4; --ink-2:#a3acbb; --ink-3:#7b8494;
+    --blue:#62a8f0; --blue-2:#8bc0f6; --blue-soft:#16273a; --blue-soft-2:#1e3a55;
+    --blue-grad:linear-gradient(96deg,#215f9f 0%,#123f6c 100%);
+    --amber:#dda265; --amber-2:#e8b77f; --amber-soft:#2a2015; --amber-line:#41321e;
+    --amber-grad:linear-gradient(96deg,#8a5a20 0%,#5c3b12 100%);
+    --green:#4fbb8c; --green-soft:#12291f;
+    --rule:color-mix(in srgb, #ffffff 8%, transparent);
+    --foot-bg:#131924; --foot-ink:#a3acbb; --foot-head:#707a8c; --foot-strong:#e9edf4;
+    --foot-line:rgba(255,255,255,.09); --foot-accent:#8bc0f6;
+    --foot-grad:linear-gradient(165deg,#1a212e 0%,#0c0f16 100%);
+    --sh-sm:0 1px 2px rgba(0,0,0,.4), 0 8px 22px -16px rgba(0,0,0,.7);
+    --sh:0 2px 4px rgba(0,0,0,.4), 0 26px 56px -34px rgba(0,0,0,.85);
+    --sh-blue:0 8px 18px -12px rgba(98,168,240,.5);
+  }
+}
+:root[data-theme="dark"]{
+  --foot-bg:#131924; --foot-ink:#a3acbb; --foot-head:#707a8c; --foot-strong:#e9edf4;
+  --foot-line:rgba(255,255,255,.09); --foot-accent:#8bc0f6;
+  --foot-grad:linear-gradient(165deg,#1a212e 0%,#0c0f16 100%);
+  --bg:#0f141c; --card:#161d27; --plate:#131922;
+  --line:#252e3b; --line-2:#2f3a49;
+  --ink:#e9edf4; --ink-2:#a3acbb; --ink-3:#7b8494;
+  --blue:#62a8f0; --blue-2:#8bc0f6; --blue-soft:#16273a; --blue-soft-2:#1e3a55;
+  --blue-grad:linear-gradient(96deg,#215f9f 0%,#123f6c 100%);
+  --amber:#dda265; --amber-2:#e8b77f; --amber-soft:#2a2015; --amber-line:#41321e;
+  --amber-grad:linear-gradient(96deg,#8a5a20 0%,#5c3b12 100%);
+  --green:#4fbb8c; --green-soft:#12291f;
+  --rule:color-mix(in srgb, #ffffff 8%, transparent);
+  --sh-sm:0 1px 2px rgba(0,0,0,.4), 0 8px 22px -16px rgba(0,0,0,.7);
+  --sh:0 2px 4px rgba(0,0,0,.4), 0 26px 56px -34px rgba(0,0,0,.85);
+  --sh-blue:0 8px 18px -12px rgba(98,168,240,.5);
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.5;font-weight:500;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.05rem,4.1vw,3.1rem);font-weight:900}
+h2{font-size:clamp(1.5rem,2.6vw,2.15rem)}
+h3{font-size:1.12rem;letter-spacing:-.015em;line-height:1.25}
+p{margin:0}
+a{color:inherit}
+svg{display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.muted{color:var(--ink-2);font-weight:500}
+.lead{font-size:clamp(15.5px,1.2vw,18px);color:var(--ink-2);font-weight:500;max-width:46ch}
+.prose{max-width:68ch}
+.ic{width:20px;height:20px;stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ic-sm{width:16px;height:16px}
+.ic-lg{width:24px;height:24px}
+
+
+/* ---------- плашка прототипа ---------- */
+#protobar{position:sticky;top:0;z-index:80;background:var(--amber-soft);color:var(--amber);
+  font-size:13px;font-weight:700;border-bottom:1px solid var(--amber-line)}
+#protobar .wrap{display:flex;gap:var(--s4);align-items:center;justify-content:space-between;padding:9px 22px}
+#protobar button{background:transparent;border:1.5px solid currentColor;color:inherit;border-radius:var(--pill);
+  padding:3px 13px;font:inherit;font-size:12px;cursor:pointer;flex:none}
+
+/* ---------- шапка ---------- */
+header.nav{position:sticky;top:0;z-index:70;background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+@supports (animation-timeline: scroll()){
+  header.nav{animation:nav-shadow linear both;animation-timeline:scroll();animation-range:0 90px}
+}
+@keyframes nav-shadow{to{box-shadow:0 1px 0 var(--line), 0 14px 30px -26px rgba(20,30,50,.55)}}
+#protobar.on ~ header.nav{top:40px}
+.nav .wrap{display:flex;align-items:center;gap:26px;height:74px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
+.brand .mk{width:38px;height:38px;border-radius:11px;background:var(--blue-grad);color:#fff;
+  display:grid;place-items:center;font-weight:900;font-size:15px;letter-spacing:-.03em;flex:none}
+.brand i{font-style:normal;display:flex;flex-direction:column;line-height:1.15}
+.brand b{font-size:15.5px;font-weight:900;letter-spacing:-.02em}
+.brand span{font-size:11.5px;color:var(--ink-3);font-weight:700}
+.nav nav{display:flex;gap:2px;margin-left:auto;align-items:center}
+.nav nav a{font-size:14.5px;font-weight:700;text-decoration:none;color:var(--ink-2);white-space:nowrap;
+  padding:9px 13px;border-radius:var(--pill);transition:color var(--dur) var(--ease), background var(--dur) var(--ease)}
+.nav nav a:hover{color:var(--ink)}
+.nav nav a.active{color:var(--blue);background:var(--blue-soft)}
+.nav-actions{display:flex;align-items:center;gap:12px;flex:none}
+.nav-tel{font-weight:800;font-size:15px;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:7px}
+.burger{display:none;background:var(--card);border:1px solid var(--line-2);border-radius:var(--r-field);
+  width:44px;height:40px;cursor:pointer;color:var(--ink);align-items:center;justify-content:center}
+
+/* ---------- кнопки ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:none;font-family:inherit;
+  font-weight:800;font-size:15px;color:#fff;background:var(--blue);border-radius:var(--pill);padding:14px 24px;
+  text-decoration:none;cursor:pointer;box-shadow:var(--sh-blue);
+  transition:background var(--dur) var(--ease), transform var(--dur) var(--ease)}
+.btn:hover{background:var(--blue-2);transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.btn:focus-visible{outline:3px solid var(--blue-soft-2);outline-offset:2px}
+.btn .ic{transition:transform var(--dur) var(--ease)}
+.btn:hover .ic{transform:translate(2px,-2px)}
+.btn.ghost{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line-2)}
+.btn.ghost:hover{background:var(--blue-soft);color:var(--blue-2);box-shadow:inset 0 0 0 1.5px var(--blue-soft-2)}
+.btn.white{background:#fff;color:var(--blue-2);box-shadow:0 10px 24px -16px rgba(0,0,0,.6)}
+.btn.white:hover{background:#eef5fd}
+.btn.on-color{background:rgba(255,255,255,.16);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
+.btn.on-color:hover{background:rgba(255,255,255,.24)}
+.btn.sm{padding:10px 18px;font-size:13.5px}
+.btn.lg{padding:16px 28px;font-size:16px}
+.linkar{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--blue);font-weight:800;font-size:14.5px}
+.linkar:hover{color:var(--blue-2)}
+.linkar .ic{transition:transform var(--dur) var(--ease)}
+.linkar:hover .ic{transform:translate(2px,-2px)}
+
+/* ---------- каркас ---------- */
+.page{display:none}
+.page.active{display:block}
+section{padding:var(--s7) 0}
+section.lead-in{padding-top:var(--s5)}
+section.pinch{padding-top:var(--s5);padding-bottom:var(--s5)}
+section:last-of-type{padding-bottom:var(--s8)}
+.plate{background:var(--plate);border-radius:var(--r-card);padding:clamp(24px,3vw,46px)}
+.card{background:var(--card);border-radius:var(--r-card);padding:clamp(22px,2.3vw,30px);box-shadow:var(--sh-sm)}
+.sec-head{margin-bottom:var(--s6);max-width:52ch}
+.sec-head p{margin-top:var(--s3);color:var(--ink-2)}
+
+/* ---------- первый экран ---------- */
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(24px,3.4vw,56px);align-items:center;
+  padding:var(--s7) 0 var(--s6)}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero .lead{margin:var(--s5) 0 var(--s6)}
+.hero-cta{display:flex;gap:var(--s3);flex-wrap:wrap}
+.hero-note{margin-top:var(--s5);font-size:13.5px;color:var(--ink-2);font-weight:600;display:flex;align-items:center;gap:8px}
+.portrait{position:relative;border-radius:var(--r-card);overflow:hidden;background:var(--plate);
+  box-shadow:var(--sh);aspect-ratio:1/1;display:grid;place-items:center;padding:20px}
+.portrait::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg, transparent 38%, color-mix(in srgb, var(--ink) 14%, transparent) 72%, color-mix(in srgb, var(--ink) 42%, transparent))}
+
+/* аргументы: лёгкая линейная панель, не дублирует карточки услуг */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);
+  background:color-mix(in srgb, var(--card) 46%, transparent);
+  border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+@media (prefers-reduced-transparency: reduce){
+  .facts{background:var(--plate);backdrop-filter:none;-webkit-backdrop-filter:none}
+}
+.fact{display:flex;flex-direction:column;gap:var(--s3);padding:var(--s5);min-width:0}
+.fact + .fact{border-left:1px solid var(--line)}
+.fact .fic{width:34px;height:34px;border-radius:10px;background:var(--blue-soft);color:var(--blue-2);
+  display:grid;place-items:center}
+.fact b{display:block;font-size:14.5px;font-weight:800;letter-spacing:-.01em}
+.fact span{font-size:13.5px;color:var(--ink-2);font-weight:500;line-height:1.45}
+
+/* ---------- баннер раздела ---------- */
+.banner{background:var(--blue-grad);border-radius:var(--r-card);padding:clamp(26px,3.2vw,44px) clamp(22px,3vw,44px);
+  color:#fff;position:relative;overflow:hidden}
+.banner.warm{background:var(--amber-grad)}
+.banner::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:repeating-linear-gradient(to bottom, transparent 0 33px, rgba(255,255,255,.09) 33px 34px)}
+.banner > *{position:relative;z-index:1}
+.banner h1{color:#fff;max-width:20ch}
+.banner .b-sub{margin-top:var(--s4);color:rgba(255,255,255,.9);max-width:60ch;font-weight:600;font-size:16px}
+.chips{display:flex;gap:var(--s2);flex-wrap:wrap;margin-top:var(--s5)}
+.chips a{background:rgba(255,255,255,.16);color:#fff;border-radius:var(--pill);padding:11px 18px;text-decoration:none;
+  font-weight:800;font-size:14px;display:inline-flex;align-items:center;gap:8px;
+  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.36);transition:background var(--dur) var(--ease)}
+.chips a:hover{background:rgba(255,255,255,.28)}
+.chips a.solid{background:#fff;color:var(--blue-2);box-shadow:none}
+.banner.warm .chips a.solid{color:var(--amber-2)}
+.chips a.solid:hover{background:#eef5fd}
+
+/* ---------- ряд-ведомость ---------- */
+.ledger{background:var(--card);border-radius:var(--r-card);box-shadow:var(--sh-sm);overflow:hidden}
+.ledger .row{display:grid;grid-template-columns:48px 1fr 1.35fr;gap:var(--s4);align-items:center;padding:var(--s5) clamp(20px,2.4vw,30px);transition:background var(--dur) var(--ease)}
+.ledger .row:hover{background:var(--plate)}
+.ledger .row + .row{border-top:1px solid var(--line)}
+.ledger .row .mark{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;
+  background:var(--blue-soft);color:var(--blue-2)}
+.ledger .row b{font-size:16px;font-weight:800;letter-spacing:-.015em}
+.ledger .row p{font-size:14.5px;color:var(--ink-2);font-weight:500}
+.ledger .row.flag{background:var(--amber-soft)}
+.ledger .row.flag:hover{background:color-mix(in srgb, var(--amber-soft) 80%, var(--amber-line))}
+.ledger .row.flag .mark{background:color-mix(in srgb, var(--amber) 16%, transparent);color:var(--amber)}
+.ledger .row.flag b{color:var(--amber-2)}
+.ledger .row.flag p{color:color-mix(in srgb, var(--amber-2) 82%, var(--ink-2))}
+
+/* ---------- плитки направлений ---------- */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
+.tile{background:var(--card);border-radius:var(--r-card);padding:var(--s5) var(--s5) var(--s5);box-shadow:var(--sh-sm);
+  display:flex;flex-direction:column;gap:var(--s2);text-decoration:none;min-height:172px;
+  transition:transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease)}
+a.tile:hover{transform:translateY(-2px);box-shadow:var(--sh)}
+.tile .mark{width:42px;height:42px;border-radius:13px;background:var(--blue);color:#fff;
+  display:grid;place-items:center;margin-bottom:var(--s2);box-shadow:var(--sh-blue)}
+.tile b{font-size:1.04rem;font-weight:800;letter-spacing:-.015em}
+.tile p{font-size:14px;color:var(--ink-2);font-weight:500;max-width:40ch}
+.tile .go{margin-top:auto;padding-top:var(--s4);color:var(--blue);font-weight:800;font-size:13.5px;display:inline-flex;gap:6px;align-items:center}
+.tile .outcome{font-size:13px;color:var(--ink-2);font-weight:500;line-height:1.4;padding-top:2px}
+.tile .outcome b{color:var(--ink);font-weight:800}
+.tile .post-date{font-size:12px;color:var(--ink-3);font-weight:700;letter-spacing:.02em}
+.tile.wide{grid-column:span 2}
+.tiles.two{grid-template-columns:repeat(2,1fr)}
+.tile.warm{background:var(--amber-grad);color:#fff}
+.tile.warm p{color:rgba(255,255,255,.88)}
+.tile.warm .go{color:#fff}
+.tile.warm .mark{background:rgba(255,255,255,.24);color:#fff;box-shadow:none}
+
+/* ---------- таймлайн работы ---------- */
+.flow{display:grid;grid-template-columns:1fr 30px 1fr 30px 1fr 30px 1fr;gap:var(--s4);align-items:start}
+.flow .node{background:var(--card);border-radius:var(--r-card);padding:var(--s5);box-shadow:var(--sh-sm);min-width:0}
+.flow .dot{width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;
+  font-weight:900;font-size:14.5px;margin-bottom:var(--s4);font-variant-numeric:tabular-nums;box-shadow:var(--sh-blue)}
+.flow .fa{align-self:center;justify-self:center;color:var(--blue);opacity:.55;margin-top:0}
+.flow b{display:block;font-weight:800;font-size:15.5px;margin-bottom:var(--s2);letter-spacing:-.015em}
+.flow p{font-size:14px;color:var(--ink-2);font-weight:500}
+
+/* ---------- налоговый календарь ---------- */
+.calendar{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
+.cal-item{background:var(--card);border-radius:var(--r-card);padding:var(--s5);box-shadow:var(--sh-sm);
+  display:flex;flex-direction:column;gap:var(--s3)}
+.cal-item .day{width:56px;height:56px;border-radius:15px;background:var(--amber-soft);color:var(--amber);
+  display:grid;place-items:center;font-weight:900;font-size:19px;font-variant-numeric:tabular-nums;
+  box-shadow:inset 0 0 0 1.5px var(--amber-line)}
+.cal-item b{display:block;font-size:15.5px;font-weight:800;letter-spacing:-.01em}
+.cal-item p{font-size:14px;color:var(--ink-2);font-weight:500;line-height:1.45}
+
+/* ---------- таблицы ---------- */
+.tablewrap{background:var(--card);border-radius:var(--r-card);box-shadow:var(--sh-sm);overflow-x:auto}
+table.matrix{width:100%;border-collapse:collapse;font-size:14.5px;min-width:660px}
+table.matrix th,table.matrix td{padding:15px 18px;text-align:left;vertical-align:top}
+table.matrix thead th{font-weight:900;font-size:14px;white-space:nowrap;border-bottom:1px solid var(--line-2)}
+table.matrix thead th:first-child{width:32%}
+table.matrix tbody tr:nth-child(even){background:var(--plate)}
+table.matrix td:first-child{font-weight:700}
+table.matrix .yes{color:var(--green);font-weight:800;display:inline-flex;align-items:center;gap:7px;font-size:13.5px}
+table.matrix .cond{color:var(--ink-2);font-weight:600;font-size:13.5px}
+table.matrix .off{color:var(--ink-3);font-weight:600;font-size:13.5px}
+
+/* ---------- пакеты ---------- */
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4)}
+.plan{background:var(--card);border-radius:var(--r-card);padding:var(--s5);box-shadow:var(--sh-sm);display:flex;flex-direction:column}
+.plan.featured{box-shadow:inset 0 0 0 2px var(--blue), var(--sh)}
+.plan .lead-tag{align-self:flex-start;font-size:11.5px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--blue);background:var(--blue-soft);padding:5px 11px;border-radius:var(--pill);margin-bottom:var(--s4)}
+.plan h3{margin-bottom:var(--s2)}
+.plan .fit{font-size:13.5px;color:var(--ink-2);font-weight:600;margin-bottom:var(--s4);min-height:38px}
+.plan:not(.featured)::before{content:"";display:block;height:23px;margin-bottom:var(--s4)}
+.plan .price{font-weight:900;font-size:1.3rem;letter-spacing:-.02em;font-variant-numeric:tabular-nums;
+  padding-top:var(--s4);border-top:1px solid var(--line);margin-top:auto}
+.plan .price small{display:block;font-size:12.5px;color:var(--ink-3);font-weight:600;margin-top:5px;line-height:1.35}
+.plan .btn{margin-top:var(--s5);width:100%}
+
+/* ---------- формы ---------- */
+.field{display:grid;gap:6px;margin-bottom:var(--s4)}
+.field label{font-size:13.5px;font-weight:800}
+.field .help{font-size:12.5px;color:var(--ink-2);font-weight:600}
+.field .err{font-size:12.5px;color:#b3253c;font-weight:700;display:none;align-items:center;gap:6px}
+:root[data-theme="dark"] .field .err{color:#f2939f}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .field .err{color:#f2939f}}
+.field.invalid .err{display:flex}
+input,select,textarea{font-family:inherit;font-size:15px;font-weight:600;color:var(--ink);background:var(--card);
+  border:1.5px solid var(--line-2);border-radius:var(--r-field);padding:13px 15px;width:100%;
+  transition:border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease)}
+input::placeholder,textarea::placeholder{color:var(--ink-3);font-weight:500}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
+.field.invalid input,.field.invalid select{border-color:#b3253c}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-2);font-weight:600}
+.check input{width:auto;margin-top:3px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
+.result{background:var(--blue-soft);border-radius:var(--r-mid);padding:var(--s5);margin-top:var(--s4);display:none}
+.result.show{display:block}
+.result h4{font-size:15.5px;font-weight:900;margin:0 0 var(--s3)}
+.result ul{margin:0;padding:0;list-style:none;display:grid;gap:9px;font-size:14px;color:var(--ink-2);font-weight:600}
+.result li{display:flex;gap:9px;align-items:flex-start}
+.result li .ic{color:var(--blue);margin-top:2px}
+/* горизонтальная лид-форма */
+.hform{background:var(--card);border-radius:var(--r-card);padding:clamp(24px,3vw,40px);box-shadow:var(--sh-sm)}
+.hform .hf-row{display:grid;grid-template-columns:1fr 1fr auto;gap:var(--s3);align-items:end;margin-top:var(--s5)}
+.hform .field{margin-bottom:0}
+.hform .check{margin-top:var(--s3)}
+@media (max-width:760px){ .hform .hf-row{grid-template-columns:1fr} .hform .btn{width:100%} }
+
+.state-ok{display:none;text-align:center;padding:var(--s5) var(--s2)}
+.state-ok.show{display:block}
+.state-ok .ok{width:60px;height:60px;margin:0 auto var(--s4);border-radius:50%;background:var(--green-soft);color:var(--green);display:grid;place-items:center}
+.state-ok h3{margin-bottom:var(--s2)}
+.spinner{width:15px;height:15px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;display:none}
+.btn.loading .spinner{display:block;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- отзывы ---------- */
+.car-head{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);margin-bottom:var(--s5)}
+.car-nav{display:flex;gap:var(--s2)}
+.car-btn{width:46px;height:46px;border-radius:50%;background:var(--card);border:none;cursor:pointer;color:var(--ink);
+  box-shadow:inset 0 0 0 1.5px var(--line-2);display:grid;place-items:center;
+  transition:background var(--dur) var(--ease), color var(--dur) var(--ease)}
+.car-btn:hover{background:var(--blue-soft);color:var(--blue-2);box-shadow:inset 0 0 0 1.5px var(--blue-soft-2)}
+.car-btn:focus-visible{outline:3px solid var(--blue-soft-2);outline-offset:2px}
+.car{display:flex;gap:var(--s4);overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;
+  scroll-behavior:smooth;padding-bottom:4px;margin-bottom:-4px}
+@media (prefers-reduced-motion: reduce){ .car{scroll-behavior:auto} }
+.car::-webkit-scrollbar{display:none}
+.car .quote{flex:0 0 calc(50% - var(--s4)/2);scroll-snap-align:start}
+.quote{background:var(--card);border-radius:var(--r-card);padding:var(--s5) var(--s6);box-shadow:var(--sh-sm)}
+.quote .qm{color:var(--blue-soft-2);margin-bottom:var(--s3)}
+.quote p{font-size:1.02rem;font-weight:700;line-height:1.45;letter-spacing:-.01em}
+.quote .who{margin-top:var(--s4);font-size:13.5px;color:var(--ink-3);font-weight:700}
+
+/* ---------- вопросы ---------- */
+.faq{display:grid;gap:var(--s2)}
+.faq details{background:var(--card);border-radius:var(--r-mid);box-shadow:var(--sh-sm);padding:var(--s4) var(--s5)}
+.faq summary{cursor:pointer;font-weight:800;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;gap:var(--s5);align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ic{color:var(--blue);transition:transform var(--dur) var(--ease)}
+.faq details[open] summary .ic{transform:rotate(45deg)}
+.faq p{margin-top:var(--s3);color:var(--ink-2);font-size:14.5px;font-weight:500;max-width:70ch}
+
+/* ---------- призыв ---------- */
+.cta{background:var(--blue-grad);border-radius:var(--r-card);padding:clamp(26px,3.4vw,48px);color:#fff;
+  display:grid;grid-template-columns:1.4fr .6fr;gap:var(--s6);align-items:center;position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.45;
+  background:repeating-linear-gradient(to bottom, transparent 0 33px, rgba(255,255,255,.09) 33px 34px)}
+.cta > *{position:relative;z-index:1}
+.cta h2{color:#fff}
+.cta p{color:rgba(255,255,255,.88);margin-top:var(--s3);font-weight:500;max-width:50ch}
+.cta-actions{display:flex;flex-direction:column;gap:var(--s2)}
+
+/* ---------- контакты ---------- */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--s4);align-items:start}
+#calc .contact-grid{align-items:stretch}
+#calc .contact-grid > .card{display:flex;flex-direction:column}
+#calc #calcBtn,#calc #calcForm{margin-top:auto}
+.contact-combo{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.contact-combo .contact-list{box-shadow:none;border-radius:0}
+.contact-combo .mapbox{border-radius:0;box-shadow:none;border-top:1px solid var(--line)}
+
+/* Контакты: левая и правая колонка одной высоты — карта и textarea тянутся, а не рвано обрезаются */
+#p-kontakty .contact-grid{align-items:stretch}
+#p-kontakty .contact-combo .mapbox{flex:1;aspect-ratio:auto;min-height:220px}
+#p-kontakty .write-card{display:flex;flex-direction:column}
+#p-kontakty .write-card #mainForm{display:flex;flex-direction:column;flex:1}
+#p-kontakty .write-card .field-grow{flex:1;display:flex;flex-direction:column}
+#p-kontakty .write-card .field-grow textarea{flex:1;min-height:96px;resize:none}
+.contact-list{background:var(--card);border-radius:var(--r-card);box-shadow:var(--sh-sm);overflow:hidden}
+.contact-list a,.contact-list div{display:flex;gap:var(--s4);align-items:flex-start;padding:var(--s4) var(--s5);text-decoration:none}
+.contact-list a + *,.contact-list div + *{border-top:1px solid var(--line)}
+.contact-list .ic{color:var(--blue);margin-top:3px}
+.contact-list a > span,.contact-list div > span{min-width:0;display:block}
+.contact-list b{display:block;font-weight:800;font-size:15.5px;overflow-wrap:anywhere}
+.contact-list span{font-size:13px;color:var(--ink-3);font-weight:600}
+
+/* ---------- слоты под материалы ---------- */
+.slot{border:1.5px dashed var(--line-2);border-radius:var(--r-mid);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:5px;color:var(--ink-3);font-size:12.5px;font-weight:600;
+  padding:var(--s5);text-align:center;min-height:150px;background:var(--plate)}
+.slot b{font-size:14px;color:var(--ink-2);font-weight:800}
+.slot .ic{color:var(--ink-3);margin-bottom:var(--s2)}
+
+/* карта: живой виджет, под ним оформленная подложка на случай блокировки */
+.mapbox{position:relative;border-radius:var(--r-card);overflow:hidden;box-shadow:var(--sh-sm);
+  aspect-ratio:16/10;background:var(--plate)}
+.mapbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
+.map-fb{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:var(--s3);text-align:center;padding:var(--s5)}
+.map-fb b{font-size:15px;font-weight:800}
+.map-fb .ic{color:var(--blue)}
+
+/* ---------- подвал ---------- */
+footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
+  border-radius:var(--r-card) var(--r-card) 0 0;padding:var(--s7) 0 var(--s5)}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--s6);flex-wrap:wrap;
+  padding-bottom:var(--s6);border-bottom:1px solid var(--foot-line);margin-bottom:var(--s6)}
+.foot-top .bw{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:900;letter-spacing:-.03em;color:var(--foot-strong);line-height:1}
+.foot-top .bt{margin-top:var(--s2);font-size:14px;font-weight:600;color:var(--foot-ink)}
+.foot-ct{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.foot-ct a{text-decoration:none;color:var(--foot-strong);font-weight:800}
+.foot-ct .f-tel{font-size:1.25rem;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.foot-ct .f-mail{font-size:14px;color:var(--foot-ink);font-weight:600}
+.foot-ct a:hover{color:var(--foot-accent)}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:var(--s6);margin-bottom:var(--s6)}
+.foot-grid > div{min-width:0}
+.foot-grid h4{font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--foot-head);margin:0 0 var(--s4)}
+.foot-grid a,.foot-grid p{display:block;text-decoration:none;margin-bottom:10px;color:var(--foot-ink);font-size:14.5px;font-weight:600;overflow-wrap:anywhere}
+.foot-grid a:hover{color:var(--foot-strong)}
+.foot-bottom{border-top:1px solid var(--foot-line);padding-top:var(--s4);display:flex;justify-content:space-between;
+  gap:var(--s4);flex-wrap:wrap;font-size:12.5px;color:var(--foot-head);font-weight:600}
+
+/* ---------- один авторский вход ---------- */
+.enter > *{opacity:0;transform:translateY(16px);animation:rise .62s var(--ease) forwards}
+.enter > *:nth-child(2){animation-delay:.07s}
+.enter > *:nth-child(3){animation-delay:.14s}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){
+  .enter > *{opacity:1;transform:none;animation:none}
+  .btn:hover,a.tile:hover{transform:none}
+}
+
+/* ---------- панель стиля ---------- */
+#tweak{position:fixed;right:16px;bottom:16px;z-index:90;background:var(--card);border:1px solid var(--line-2);
+  border-radius:var(--r-mid);box-shadow:var(--sh);font-size:12.5px;width:228px;overflow:hidden}
+#tweak .head{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;cursor:pointer;font-weight:800}
+#tweak .body{padding:0 14px 14px;display:grid;gap:11px}
+#tweak.closed .body{display:none}
+#tweak label{display:grid;gap:6px;font-size:11.5px;color:var(--ink-3);font-weight:800}
+#tweak select,#tweak input[type=range]{padding:6px 8px;font-size:12.5px}
+.swatches{display:flex;gap:7px}
+.swatches button{width:26px;height:26px;border-radius:50%;border:1px solid var(--line-2);cursor:pointer}
+
+/* линовка: мотив бухгалтерской ведомости. Двойной класс, чтобы шорткат background у .plate не сбивал слой */
+.ruled.ruled{background-image:repeating-linear-gradient(to bottom, transparent 0 33px, var(--rule) 33px 34px)}
+
+/* ---------- выпадающее меню «Услуги» ---------- */
+/* padding-bottom удерживает наведение через зазор до панели, margin-bottom той же
+   величиной гасит его влияние на высоту строки — пункт не съезжает среди соседей */
+.nav-drop{position:relative;display:flex;padding-bottom:10px;margin-bottom:-10px}
+.nav-drop .drop-panel{position:absolute;top:100%;left:0;background:var(--card);
+  border:1px solid var(--line-2);border-radius:var(--r-mid);box-shadow:var(--sh);
+  padding:7px;display:flex;flex-direction:column;gap:1px;min-width:210px;
+  opacity:0;visibility:hidden;transform:translateY(-6px);pointer-events:none;
+  transition:opacity var(--dur) var(--ease), transform var(--dur) var(--ease)}
+.nav-drop:hover .drop-panel,.nav-drop:focus-within .drop-panel{
+  opacity:1;visibility:visible;transform:none;pointer-events:auto}
+.drop-panel a{padding:10px 13px;border-radius:var(--r-field);font-size:14px}
+
+/* ---------- адаптив ---------- */
+@media (max-width:1150px){
+  .nav .wrap{gap:16px}
+  .nav nav a{padding:9px 10px;font-size:14px}
+}
+@media (max-width:1080px){
+  .nav-actions .btn{display:none}
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .plans{grid-template-columns:repeat(2,1fr)}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .fact:nth-child(2n){border-left:1px solid var(--line)}
+  .fact:not(:nth-child(2n)){border-left:none}
+  .fact:nth-child(n+3){border-top:1px solid var(--line)}
+  .calendar{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;padding-top:var(--s6)}
+  .portrait{aspect-ratio:16/10;order:-1}
+  .contact-grid,.cta,.quotes,.form-row{grid-template-columns:1fr}
+  .cta-actions{flex-direction:row;flex-wrap:wrap}
+  .flow{grid-template-columns:1fr 1fr}
+  .flow .fa{display:none}
+  .ledger .row{grid-template-columns:48px 1fr;row-gap:var(--s2);align-items:start}
+  .ledger .row .mark{margin-top:2px}
+  .ledger .row p{grid-column:2}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:880px){ .nav-tel{display:none} }
+@media (max-width:760px){
+  .nav .wrap{height:64px;gap:12px}
+  .nav nav{position:fixed;inset:64px 0 auto 0;background:var(--card);flex-direction:column;align-items:stretch;
+    gap:2px;padding:12px 18px 18px;display:none;box-shadow:var(--sh)}
+  .nav nav.open{display:flex}
+  .nav nav a{padding:13px 16px;font-size:15px}
+  .nav-drop{flex-direction:column;padding-bottom:0;margin-bottom:0}
+  .nav-drop .drop-panel{position:static;opacity:1;visibility:visible;transform:none;
+    pointer-events:auto;box-shadow:none;border:none;background:transparent;
+    padding:0 0 0 14px;margin-top:0}
+  .drop-panel a{padding:11px 16px;font-size:14px;color:var(--ink-2)}
+  .burger{display:flex;margin-left:auto}
+  .tiles,.tiles.two,.plans,.flow{grid-template-columns:1fr}
+  .tile.wide{grid-column:span 1}
+  .facts{grid-template-columns:1fr}
+  .fact{border-left:none !important}
+  .fact + .fact{border-top:1px solid var(--line)}
+  .car .quote{flex-basis:100%}
+  #tweak{right:10px;bottom:10px;width:204px}
+}
+@media (max-width:560px){
+  .foot-grid{grid-template-columns:1fr;gap:var(--s5)}
+  .quote{padding:var(--s5)}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="i-arrow"><path d="M7 17 17 7M9 7h8v8"/></g>
+    <g id="i-check"><path d="m4 12 5.5 5.5L20 7"/></g>
+    <g id="i-plus"><path d="M12 5v14M5 12h14"/></g>
+    <g id="i-person"><circle cx="12" cy="8" r="3.6"/><path d="M4.8 20a7.2 7.2 0 0 1 14.4 0"/></g>
+    <g id="i-doc"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></g>
+    <g id="i-shield"><path d="M12 3 5 6v6c0 4.2 2.9 7.7 7 9 4.1-1.3 7-4.8 7-9V6z"/><path d="m9 12 2 2 4-4"/></g>
+    <g id="i-clock"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5.2l3.2 2"/></g>
+    <g id="i-bank"><path d="M4 10h16M5.5 10v8M18.5 10v8M9.5 10v8M14.5 10v8M3 20h18M12 3l8 4H4z"/></g>
+    <g id="i-alert"><path d="M12 4.5 3 19.5h18z"/><path d="M12 10v4M12 17h.01"/></g>
+    <g id="i-people"><circle cx="9" cy="8.5" r="3.2"/><path d="M3 19.5a6 6 0 0 1 12 0"/><path d="M16 6.2a3.2 3.2 0 0 1 0 6.1M17.5 19.5a6 6 0 0 0-2.2-4.6"/></g>
+    <g id="i-phone"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z"/></g>
+    <g id="i-mail"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.6 7 8.4 6 8.4-6"/></g>
+    <g id="i-pin"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></g>
+    <g id="i-quote"><path d="M9 6.5C6.2 8 4.8 10.3 4.8 13.4c0 2.4 1.4 4.1 3.4 4.1 1.8 0 3.1-1.3 3.1-3.1 0-1.7-1.2-3-2.8-3-.3 0-.6 0-.8.1.3-1.5 1.3-2.7 2.9-3.6zm9.4 0c-2.8 1.5-4.2 3.8-4.2 6.9 0 2.4 1.4 4.1 3.4 4.1 1.8 0 3.1-1.3 3.1-3.1 0-1.7-1.2-3-2.8-3-.3 0-.6 0-.8.1.3-1.5 1.3-2.7 2.9-3.6z"/></g>
+    <g id="i-menu"><path d="M4 7h16M4 12h16M4 17h16"/></g>
+    <g id="i-left"><path d="m14.5 5.5-6.5 6.5 6.5 6.5"/></g>
+    <g id="i-right"><path d="m9.5 5.5 6.5 6.5-6.5 6.5"/></g>
+    <g id="i-next"><path d="M4 12h15M13.5 6.5 19 12l-5.5 5.5"/></g>
+    <g id="i-cart"><path d="M4 5h2l2.2 10.5a1.6 1.6 0 0 0 1.6 1.3h6.9a1.6 1.6 0 0 0 1.6-1.2L20 8H7"/><circle cx="10.5" cy="19.5" r="1.3"/><circle cx="16.5" cy="19.5" r="1.3"/></g>
+    <g id="i-image"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="m4 17 4.5-4.2 3.6 3.2 3-2.6L20 17.5"/></g>
+    <g id="i-calc"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7.5h7M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h3"/></g>
+  </defs>
+</svg>
+
+<div id="protobar" class="on">
+  <div class="wrap">
+    <span>Прототип для согласования. Отзывы, фото и тексты «обо мне» — заглушки, заменим фактурой клиента.</span>
+    <button id="hideBar" type="button">Скрыть</button>
+  </div>
+</div>
+
+<header class="nav" id="navbar">
+  <div class="wrap">
+    <a href="#/" class="brand" data-link>
+      <span class="mk">ИБ</span>
+      <i><b>Ильющенкова</b><span>бухгалтерия, Брянск</span></i>
+    </a>
+    <nav id="menu">
+      <div class="nav-drop">
+        <a href="#/uslugi" data-link>Услуги</a>
+        <div class="drop-panel">
+          <a href="#/dlya-ip" data-link>Для ИП</a>
+          <a href="#/dlya-ooo" data-link>Для ООО</a>
+          <a href="#/nds-2026" data-link>НДС на упрощёнке</a>
+        </div>
+      </div>
+      <a href="#/tarify" data-link>Пакеты</a>
+      <a href="#/nds-2026" data-link>НДС на УСН</a>
+      <a href="#/o-nas" data-link>Обо мне</a>
+      <a href="#/blog" data-link>Блог</a>
+      <a href="#/kontakty" data-link>Контакты</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="tel:+79103365274" class="nav-tel"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-phone"/></svg>+7 910 336-52-74</a>
+      <a href="#/tarify" class="btn sm" data-link>Рассчитать <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+      <button class="burger" id="burger" type="button" aria-label="Меню"><svg class="ic" viewBox="0 0 24 24"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= ГЛАВНАЯ ================= -->
+<div class="page" id="p-home">
+  <div class="wrap">
+    <div class="hero enter">
+      <div>
+        <h1>Веду бухгалтерию <em>ИП и ООО</em></h1>
+        <p class="lead">Отчётность сдаётся в срок, налоги посчитаны заранее, требования из налоговой закрываю сама.</p>
+        <div class="hero-cta">
+          <a href="#/tarify" class="btn lg" data-link>Рассчитать стоимость <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+          <a href="#/kontakty" class="btn ghost lg" data-link>Задать вопрос</a>
+        </div>
+        <p class="hero-note"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-shield"/></svg>Первая проверка учёта бесплатна и ни к чему не обязывает</p>
+      </div>
+      <div class="portrait ruled">
+        <div class="slot" style="border:none;background:transparent;min-height:auto">
+          <svg class="ic ic-lg" viewBox="0 0 24 24"><use href="#i-image"/></svg>
+          <b>Фото Светланы</b>вертикальный портрет, 1200x1500
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="facts">
+        <div class="fact"><span class="fic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-person"/></svg></span><b>Личный бухгалтер</b><span>Работаете с одним человеком, а не с колл-центром</span></div>
+        <div class="fact"><span class="fic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><b>Все режимы</b><span>УСН, ОСНО, патент и совмещение, с сотрудниками и без</span></div>
+        <div class="fact"><span class="fic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg></span><b>Ответственность в договоре</b><span>Порядок возмещения штрафов по моей вине закреплён письменно</span></div>
+        <div class="fact"><span class="fic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg></span><b>Ответ в тот же день</b><span>Число клиентов ограничено сознательно</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="tiles">
+        <a href="#/dlya-ip" class="tile" data-link>
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-person"/></svg></span>
+          <b>Бухгалтерия для ИП</b>
+          <p>Налоги и взносы, КУДиР, декларации, сотрудники и кадры.</p>
+          <span class="go">Перейти <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a href="#/dlya-ooo" class="tile" data-link>
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-bank"/></svg></span>
+          <b>Бухгалтерия для ООО</b>
+          <p>Полный учёт на УСН и ОСНО, включая НДС и годовой баланс.</p>
+          <span class="go">Перейти <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a href="#/nds-2026" class="tile warm" data-link>
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-alert"/></svg></span>
+          <b>НДС на упрощёнке с 2026 года</b>
+          <p>Порог снижен до 20 млн рублей. Проверьте, попадаете ли вы.</p>
+          <span class="go">Проверить оборот <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>С чем ко мне приходят</h2>
+        <p>Чаще всего звонят не за «ведением учёта», а с конкретной ситуацией, которую нужно закрыть.</p>
+      </div>
+      <div class="ledger">
+        <div class="row flag">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-alert"/></svg></span>
+          <b>Пришло требование из налоговой</b>
+          <p>Разбираю, что запрашивают, готовлю пояснения и документы, отвечаю в установленный срок.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-bank"/></svg></span>
+          <b>Заблокировали расчётный счёт</b>
+          <p>Собираю пакет документов для банка по 115-ФЗ и снимаю вопросы по операциям.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
+          <b>Уволился бухгалтер</b>
+          <p>Принимаю дела, проверяю остатки и незакрытые периоды, сверяюсь с налоговой.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-people"/></svg></span>
+          <b>Наняли первого сотрудника</b>
+          <p>Кадровые документы, расчёт зарплаты, взносы, отчёты в СФР и налоговую.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-clock"/></svg></span>
+          <b>Учёт запущен за прошлые периоды</b>
+          <p>Восстанавливаю, досдаю то, что не сдано, и считаю, какими будут штрафы.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:var(--s5)">
+        <h2>Что происходит каждый месяц</h2>
+        <p>Порядок один и тот же, поэтому отчётный период не превращается в аврал.</p>
+      </div>
+      <div class="calendar">
+        <div class="cal-item">
+          <span class="day">25</span>
+          <b>Уведомление по ЕНС</b>
+          <p>К этому числу сдаются уведомления об исчисленных налогах и взносах.</p>
+        </div>
+        <div class="cal-item">
+          <span class="day">28</span>
+          <b>Уплата налогов</b>
+          <p>Суммы вы знаете заранее, платёжные документы готовы до срока.</p>
+        </div>
+        <div class="cal-item">
+          <span class="day"><svg class="ic" viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
+          <b>Разбор документов</b>
+          <p>Выписка банка, касса, закрывающие документы и то, чего не хватает.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><h2>Как строится работа</h2></div>
+      <div class="flow">
+        <div class="node">
+          <span class="dot">1</span>
+          <b>Смотрю, что есть сейчас</b>
+          <p>Бесплатно проверяю состояние учёта и сданную отчётность, называю объём работ.</p>
+        </div>
+        <span class="fa"><svg class="ic ic-lg" viewBox="0 0 24 24"><use href="#i-next"/></svg></span>
+        <div class="node">
+          <span class="dot">2</span>
+          <b>Фиксируем условия</b>
+          <p>Состав работ, сроки, стоимость и ответственность за ошибки прописаны в договоре.</p>
+        </div>
+        <span class="fa"><svg class="ic ic-lg" viewBox="0 0 24 24"><use href="#i-next"/></svg></span>
+        <div class="node">
+          <span class="dot">3</span>
+          <b>Передаёте документы</b>
+          <p>Фото в мессенджер, выгрузка из банка или доступ в вашу базу 1С.</p>
+        </div>
+        <span class="fa"><svg class="ic ic-lg" viewBox="0 0 24 24"><use href="#i-next"/></svg></span>
+        <div class="node">
+          <span class="dot">4</span>
+          <b>Держу вас в курсе</b>
+          <p>До начала месяца сообщаю суммы к уплате и что нужно от вас.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="car-head">
+        <h2>Отзывы клиентов</h2>
+        <div class="car-nav">
+          <button class="car-btn" id="qPrev" type="button" aria-label="Предыдущие отзывы"><svg class="ic" viewBox="0 0 24 24"><use href="#i-left"/></svg></button>
+          <button class="car-btn" id="qNext" type="button" aria-label="Следующие отзывы"><svg class="ic" viewBox="0 0 24 24"><use href="#i-right"/></svg></button>
+        </div>
+      </div>
+      <div class="car" id="qCar">
+        <div class="quote">
+          <svg class="ic ic-lg qm" viewBox="0 0 24 24" style="stroke:none;fill:currentColor"><use href="#i-quote"/></svg>
+          <p>Заглушка отзыва. Заменим реальным текстом клиента после согласования с ним.</p>
+          <div class="who">Имя, сфера бизнеса, город</div>
+        </div>
+        <div class="quote">
+          <svg class="ic ic-lg qm" viewBox="0 0 24 24" style="stroke:none;fill:currentColor"><use href="#i-quote"/></svg>
+          <p>Вторая заглушка. Лучше всего работают отзывы с 2ГИС и Яндекс Карт со ссылкой на источник.</p>
+          <div class="who">Имя, сфера бизнеса, город</div>
+        </div>
+        <div class="quote">
+          <svg class="ic ic-lg qm" viewBox="0 0 24 24" style="stroke:none;fill:currentColor"><use href="#i-quote"/></svg>
+          <p>Третья заглушка: карусель листается стрелками, новые отзывы добавляются без правки вёрстки.</p>
+          <div class="who">Имя, сфера бизнеса, город</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>Начнём с проверки текущего учёта</h2>
+          <p>Посмотрю, что сдано, что просрочено и есть ли риски. Это бесплатно и ни к чему вас не обязывает.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="#/kontakty" class="btn white lg" data-link>Оставить заявку <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+          <a href="tel:+79103365274" class="btn on-color lg"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-phone"/></svg>+7 910 336-52-74</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= УСЛУГИ ================= -->
+<div class="page" id="p-uslugi">
+  <section class="lead-in">
+    <div class="wrap">
+      <div class="banner">
+        <h1>Бухгалтерские услуги</h1>
+        <p class="b-sub">Постоянное сопровождение снимает с вас календарь отчётности целиком. Разовые работы закрывают конкретную задачу: досдать декларацию, восстановить учёт, ответить на требование налоговой.</p>
+        <div class="chips">
+          <a href="#/dlya-ip" class="solid" data-link>Для ИП <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+          <a href="#/dlya-ooo" data-link>Для ООО <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+          <a href="#/nds-2026" data-link>НДС на упрощёнке <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+          <a href="#/tarify" data-link>Пакеты и цены <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="sec-head"><h2>Постоянное сопровождение</h2><p>Ежемесячное ведение учёта: первичка, налоги, отчётность, переписка с налоговой и банком.</p></div>
+      <div class="tiles">
+        <a href="#/dlya-ip" class="tile" data-link>
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-person"/></svg></span>
+          <h3>Бухгалтерия для ИП</h3>
+          <p>УСН, патент и совмещение режимов. Налоги и взносы, КУДиР, декларации, сотрудники и кадры.</p>
+          <span class="go">Подробнее <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a href="#/dlya-ooo" class="tile" data-link>
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-bank"/></svg></span>
+          <h3>Бухгалтерия для ООО</h3>
+          <p>Полный учёт на УСН и ОСНО: первичка, НДС, зарплата, годовой баланс, подготовка к проверкам.</p>
+          <span class="go">Подробнее <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a href="#/dlya-ip" class="tile" data-link>
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-cart"/></svg></span>
+          <h3>Продавцам маркетплейсов</h3>
+          <p>Разбор отчётов площадок: комиссии, логистика, возвраты. Учёт под обороты и число операций.</p>
+          <span class="go">Подробнее <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="sec-head"><h2>Разовые работы</h2><p>Без договора на сопровождение, под конкретную задачу. Стоимость называю до начала работы.</p></div>
+      <div class="tiles">
+        <div class="tile">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-clock"/></svg></span>
+          <h3>Восстановление учёта</h3>
+          <p>Привожу в порядок прошлые периоды, досдаю пропущенные отчёты, снимаю штрафные риски.</p>
+          <p class="outcome"><b>На выходе:</b> Сданные отчёты за пропущенные периоды и список того, что взяли на контроль</p>
+          <a href="#/kontakty" class="go" data-link>Восстановить учёт <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="tile">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
+          <h3>Отчётность разово</h3>
+          <p>Декларация по УСН, 3-НДФЛ, нулевая отчётность, годовой баланс.</p>
+          <p class="outcome"><b>На выходе:</b> Декларация, отправленная в налоговую, с подтверждением приёма</p>
+          <a href="#/kontakty" class="go" data-link>Сдать отчётность <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="tile">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-people"/></svg></span>
+          <h3>Кадры и зарплата</h3>
+          <p>Приём и увольнение, расчёт зарплаты, больничные, отпускные, отчёты по сотрудникам.</p>
+          <p class="outcome"><b>На выходе:</b> Оформленный сотрудник и первый расчёт зарплаты</p>
+          <a href="#/kontakty" class="go" data-link>Оформить сотрудника <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="tile">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-bank"/></svg></span>
+          <h3>Регистрация ИП и ООО</h3>
+          <p>Документы на открытие, выбор налогового режима, постановка учёта с первого дня.</p>
+          <p class="outcome"><b>На выходе:</b> Готовый пакет документов на регистрацию</p>
+          <a href="#/kontakty" class="go" data-link>Открыть бизнес <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="tile">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-alert"/></svg></span>
+          <h3>Ответ на требование ФНС</h3>
+          <p>Пояснения и документы по камеральным проверкам, разблокировка счёта по 115-ФЗ.</p>
+          <p class="outcome"><b>На выходе:</b> Пояснения, поданные в налоговую в срок</p>
+          <a href="#/kontakty" class="go" data-link>Ответить на требование <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="tile">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-shield"/></svg></span>
+          <h3>Консультация</h3>
+          <p>Какой режим выгоднее, как оформить сделку, что ответить налоговой. 1 000 ₽ в час.</p>
+          <p class="outcome"><b>На выходе:</b> Понятный план действий по вашей ситуации</p>
+          <a href="#/kontakty" class="go" data-link>Записаться на консультацию <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="plate ruled">
+        <div class="sec-head"><h2>Почему учёт выгоднее отдать, чем держать в штате</h2></div>
+        <div class="contact-grid" style="align-items:stretch">
+          <div>
+            <h3 style="margin-bottom:var(--s3)">Дешевле штатного бухгалтера</h3>
+            <p class="muted" style="font-size:14.5px;max-width:60ch">Штатный бухгалтер — это зарплата, взносы с неё, рабочее место, программа и обучение. Сопровождение стоит меньше, а объём работ закреплён в договоре: вы платите за результат, а не за рабочие часы.</p>
+            <h3 style="margin:var(--s5) 0 var(--s3)">Ошибки не остаются вашими</h3>
+            <p class="muted" style="font-size:14.5px;max-width:60ch">Ошибка штатного бухгалтера — риск компании: он отвечает максимум зарплатой. По договору сопровождения порядок возмещения штрафов и пеней, возникших по моей вине, закреплён письменно.</p>
+          </div>
+          <div>
+            <h3 style="margin-bottom:var(--s3)">Учёт не зависит от отпуска и увольнения</h3>
+            <p class="muted" style="font-size:14.5px;max-width:60ch">Не нужно искать замену на время отпуска, принимать дела при увольнении и проверять квалификацию при найме. Отчётность сдаётся в срок в любом месяце года.</p>
+            <h3 style="margin:var(--s5) 0 var(--s3)">Вы видите картину заранее</h3>
+            <p class="muted" style="font-size:14.5px;max-width:60ch">Суммы налогов известны до срока уплаты, о рисках по сделкам предупреждаю до подписания. Спокойный учёт — это когда сюрпризов нет ни для вас, ни для налоговой.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="hform">
+        <h2>Не нашли свою задачу</h2>
+        <p class="muted" style="margin-top:var(--s3);max-width:60ch">Опишите ситуацию своими словами или просто оставьте контакт. Отвечу, берусь ли за задачу и что для этого нужно.</p>
+        <form id="usForm">
+          <div class="hf-row">
+            <div class="field" id="us-name">
+              <label for="us-name-i">Как к вам обращаться</label>
+              <input type="text" id="us-name-i" placeholder="Имя">
+              <span class="err"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-alert"/></svg>Укажите имя</span>
+            </div>
+            <div class="field" id="us-phone">
+              <label for="us-phone-i">Телефон или мессенджер</label>
+              <input type="tel" id="us-phone-i" placeholder="+7">
+              <span class="err"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-alert"/></svg>Укажите телефон</span>
+            </div>
+            <button class="btn lg" type="submit"><span class="spinner"></span><span class="lbl">Отправить</span></button>
+          </div>
+          <label class="check">
+            <input type="checkbox" id="us-ok">
+            <span>Согласен на обработку персональных данных</span>
+          </label>
+        </form>
+        <div class="state-ok" id="usOk">
+          <div class="ok"><svg class="ic ic-lg" viewBox="0 0 24 24"><use href="#i-check"/></svg></div>
+          <h3>Заявка отправлена</h3>
+          <p class="muted">Отвечу в рабочее время. Если вопрос срочный, напишите в мессенджер.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= ДЛЯ ИП ================= -->
+<div class="page" id="p-dlya-ip">
+  <section class="lead-in">
+    <div class="wrap">
+      <div class="banner">
+        <h1>Бухгалтерия для ИП</h1>
+        <p class="b-sub">Веду учёт предпринимателей на УСН, патенте и совмещении режимов. С сотрудниками и без. Каждый месяц вы получаете суммы налогов до срока уплаты, список недостающих документов и подтверждение приёма отчёта.</p>
+        <div class="chips">
+          <a href="#/tarify" class="solid" data-link>Рассчитать стоимость <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+          <a href="#/kontakty" data-link>Задать вопрос <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="sec-head"><h2>Что входит в работу</h2></div>
+      <div class="ledger">
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-calc"/></svg></span>
+          <b>Налоги и взносы</b>
+          <p>Расчёт налога по вашему режиму, фиксированные и дополнительные взносы, напоминание о сроках, платёжные документы.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
+          <b>Учёт доходов и расходов</b>
+          <p>КУДиР, разбор выписки банка, проверка расходов на принимаемость, работа с кассой и эквайрингом.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-clock"/></svg></span>
+          <b>Отчётность</b>
+          <p>Декларация по УСН, отчётность по сотрудникам, статистика, уведомления по ЕНС.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-people"/></svg></span>
+          <b>Сотрудники</b>
+          <p>Кадровые документы, расчёт зарплаты, больничные и отпускные, отчёты в СФР и налоговую.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-shield"/></svg></span>
+          <b>Общение с налоговой</b>
+          <p>Сверка расчётов, ответы на требования, разблокировка счёта, пояснения по камеральным проверкам.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><h2>Частые вопросы</h2></div>
+      <div class="faq">
+        <details open>
+          <summary>Нужно ли возить документы <svg class="ic" viewBox="0 0 24 24"><use href="#i-plus"/></svg></summary>
+          <p>Нет. Достаточно фотографий в мессенджере и выгрузки из интернет-банка. Если у вас есть база 1С, работаю прямо в ней.</p>
+        </details>
+        <details>
+          <summary>Я работаю с маркетплейсами, это сложнее <svg class="ic" viewBox="0 0 24 24"><use href="#i-plus"/></svg></summary>
+          <p>Отчёты площадок разбираются отдельно: комиссия, логистика, возвраты, штрафы. Такой учёт беру, объём работ считаю по количеству операций.</p>
+        </details>
+        <details>
+          <summary>У меня несколько месяцев ничего не сдано <svg class="ic" viewBox="0 0 24 24"><use href="#i-plus"/></svg></summary>
+          <p>Сначала смотрю, что именно пропущено и какие штрафы уже начислены. Восстановление считается отдельно от ежемесячного сопровождения.</p>
+        </details>
+        <details>
+          <summary>Что будет, если ошибка окажется моей <svg class="ic" viewBox="0 0 24 24"><use href="#i-plus"/></svg></summary>
+          <p>Порядок возмещения штрафов и пеней, возникших по моей вине, прописан в договоре. Формулировку согласуем до подписания.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= ДЛЯ ООО ================= -->
+<div class="page" id="p-dlya-ooo">
+  <section class="lead-in">
+    <div class="wrap">
+      <div class="banner">
+        <h1>Бухгалтерия для ООО</h1>
+        <p class="b-sub">Полный учёт компании: от первичных документов до годового баланса. Работаю с УСН и с общей системой, включая НДС.</p>
+        <div class="chips">
+          <a href="#/tarify" class="solid" data-link>Рассчитать стоимость <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+          <a href="#/nds-2026" data-link>Про НДС на УСН <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="sec-head"><h2>Что меняется в зависимости от режима</h2></div>
+      <div class="tablewrap">
+        <table class="matrix">
+          <thead><tr><th>Участок учёта</th><th>ООО на УСН</th><th>ООО на ОСНО</th></tr></thead>
+          <tbody>
+            <tr><td>Налоги</td><td class="cond">Налог по УСН, НДС при обороте свыше порога, взносы за сотрудников</td><td class="cond">Налог на прибыль, НДС, имущественные налоги, взносы</td></tr>
+            <tr><td>Первичные документы</td><td class="cond">Счета, акты, накладные, УПД, авансовые отчёты</td><td class="cond">То же плюс контроль входящих счетов-фактур для вычета</td></tr>
+            <tr><td>НДС</td><td class="cond">Выбор между пониженной ставкой без вычетов и обычной ставкой, книги покупок и продаж</td><td class="cond">Полный учёт с вычетами, сверка с контрагентами, декларация</td></tr>
+            <tr><td>Отчётность</td><td class="cond">Декларация по УСН, отчёты по сотрудникам, баланс</td><td class="cond">Прибыль, НДС, отчёты по сотрудникам, баланс с приложениями</td></tr>
+            <tr><td>Директор и учредители</td><td class="cond" colspan="2">Зарплата директора, дивиденды, займы от учредителя, подотчётные суммы</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="tiles two">
+        <div class="tile">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-shield"/></svg></span>
+          <b>Если компания уже работает</b>
+          <p>Сверка с налоговой по всем налогам, проверка сданной отчётности, инвентаризация расчётов с контрагентами и список того, что нужно исправить.</p>
+          <a href="#/kontakty" class="go" data-link>Начать с проверки <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="tile">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-bank"/></svg></span>
+          <b>Если компания только открылась</b>
+          <p>Выбор налогового режима под вашу деятельность, учётная политика, настройка обмена документами, оформление директора и первого сотрудника.</p>
+          <a href="#/kontakty" class="go" data-link>Обсудить запуск <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="sec-head"><h2>Что делает бухгалтер для ООО каждый месяц</h2>
+        <p>Круг задач шире, чем у ИП: помимо налогов, есть отчётность самой компании, а не только предпринимателя.</p>
+      </div>
+      <div class="ledger">
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
+          <b>Проводит первичные документы</b>
+          <p>Разносит поступившие счета, акты, накладные и УПД, сверяет их с оплатами по банку и кассе.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-calc"/></svg></span>
+          <b>Считает налоги до срока уплаты</b>
+          <p>Авансовые платежи по налогу на прибыль или УСН, НДС при обороте свыше порога, взносы за сотрудников — суммы известны заранее, а не в последний день.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-shield"/></svg></span>
+          <b>Готовит компанию к проверке</b>
+          <p>Держит первичку в порядке и сверяется с налоговой заранее, чтобы требование не стало неожиданностью.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="plate ruled">
+        <div class="sec-head" style="margin-bottom:var(--s5)"><h2>Годовая отчётность ООО</h2>
+          <p>Помимо ежемесячных налогов, раз в год компания подводит итог — и здесь тоже нужна подготовка заранее, а не в последнюю неделю.</p>
+        </div>
+        <div class="needs">
+          <div class="need"><b>Бухгалтерский баланс</b><p>Годовая отчётность сдаётся в налоговую и Росстат, форма зависит от размера компании и системы налогообложения.</p></div>
+          <div class="need"><b>Инвентаризация перед отчётом</b><p>Сверка остатков, дебиторки и кредиторки — чтобы баланс отражал реальное состояние дел, а не цифры из программы.</p></div>
+          <div class="need"><b>Решения учредителей</b><p>Распределение прибыли, выплата дивидендов — оформляются протоколом до, а не после выплаты.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= НДС 2026 ================= -->
+<div class="page" id="p-nds-2026">
+  <section class="lead-in">
+    <div class="wrap">
+      <div class="banner warm">
+        <h1>НДС на упрощёнке: кого это касается</h1>
+        <p class="b-sub">С 1 января 2026 года освобождение от НДС на УСН действует только при доходе до 20 млн рублей за прошлый год. Порог продолжит снижаться: 15 млн с 2027 года и 10 млн с 2028 года. Основная ставка НДС выросла до 22 процентов.</p>
+        <div class="chips">
+          <a href="#check" class="solid" data-scroll="check">Проверить свой оборот <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+          <a href="#/kontakty" data-link>Записаться на разбор <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch" id="check">
+    <div class="wrap">
+      <div class="card" style="max-width:600px;margin:0 auto var(--s6)">
+        <h3>Проверьте свой оборот</h3>
+        <p class="muted" style="font-size:14.5px;margin:var(--s3) 0 var(--s5)">Доход считается за прошлый год. При совмещении с патентом обороты складываются.</p>
+        <div class="field" id="f-oborot">
+          <label for="oborot">Доход за прошлый год, млн рублей</label>
+          <input type="number" id="oborot" placeholder="например, 24" min="0" step="0.1" inputmode="decimal">
+          <span class="err"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-alert"/></svg>Введите число больше нуля</span>
+        </div>
+        <button class="btn" id="ndsCheck" type="button">Проверить <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
+        <div class="result" id="ndsResult">
+          <h4 id="ndsTitle"></h4>
+          <ul id="ndsList"></ul>
+        </div>
+      </div>
+      <div class="sec-head" style="margin-bottom:var(--s5)"><h2>Что придётся делать по-новому</h2></div>
+      <div class="ledger">
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-calc"/></svg></span>
+          <b>Считать НДС с каждой отгрузки</b>
+          <p>Налог начисляется по каждой реализации, а не раз в год по итогу.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
+          <b>Выставлять счета-фактуры</b>
+          <p>Покупателям нужен документ, иначе они теряют вычет и уходят к другому поставщику.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-clock"/></svg></span>
+          <b>Сдавать декларацию электронно</b>
+          <p>Только по телекоммуникационным каналам, на бумаге отчёт не примут.</p>
+        </div>
+        <div class="row flag">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-alert"/></svg></span>
+          <b>Пересмотреть договоры и цены</b>
+          <p>Если цена указана без оговорки про НДС, налог рискует лечь на вас. Проверить формулировки нужно до первой отгрузки в новом статусе.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="sec-head"><h2>Как выбрать между обычной и пониженной ставкой</h2>
+        <p>Универсального ответа нет — считается по вашим закупкам и клиентам.</p>
+      </div>
+      <div class="tiles two">
+        <div class="card">
+          <h3>Пониженная ставка выгоднее, если</h3>
+          <p class="muted" style="margin-top:var(--s3);font-size:14.5px">Вы почти не покупаете товары и услуги с НДС: доля закупок в выручке маленькая, а входящего налога к вычету и так было бы немного. Учёт при этом проще — не нужно собирать и проверять счета-фактуры от каждого поставщика, меньше риск ошибиться в декларации.</p>
+        </div>
+        <div class="card">
+          <h3>Обычная ставка выгоднее, если</h3>
+          <p class="muted" style="margin-top:var(--s3);font-size:14.5px">Заметная часть расходов — с НДС: аренда, крупные закупки, подрядчики на общей системе. Вычет входящего налога компенсирует более высокую ставку. Здесь же выигрывают компании, чьи покупатели тоже на ОСНО и просят счета-фактуры для собственного вычета.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="plate ruled">
+        <div class="sec-head" style="margin-bottom:var(--s5)"><h2>Что будет, если не заметить порог вовремя</h2></div>
+        <div class="needs">
+          <div class="need"><b>Доначислят налог задним числом</b><p>Если превышение обнаружит налоговая, а не вы, НДС посчитают с даты превышения — по всем отгрузкам за этот период, без права выбрать ставку заново.</p></div>
+          <div class="need"><b>Штраф и пени</b><p>За неуплаченный вовремя налог и несданную декларацию начисляются отдельно, пени — с даты, когда налог нужно было заплатить.</p></div>
+          <div class="need"><b>Покупатели останутся без вычета</b><p>Если вы не выставляли счета-фактуры вовремя, контрагенты на ОСНО не смогут принять налог к вычету за этот период — это порча отношений, не только цифры.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>Разберём вашу ситуацию по документам</h2>
+          <p>Посчитаю, попадаете ли вы под НДС, какая ставка выгоднее и что поменять в договорах.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="#/kontakty" class="btn white lg" data-link>Записаться на разбор <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <p class="muted" style="font-size:12.5px;margin-top:var(--s4)">Пороги и ставки указаны по нормам, действующим с 1 января 2026 года. Перед публикацией сверим формулировки с клиенткой.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ================= ПАКЕТЫ ================= -->
+<div class="page" id="p-tarify">
+  <section class="lead-in">
+    <div class="wrap">
+      <div class="banner">
+        <h1>Пакеты сопровождения</h1>
+        <p class="b-sub">Пакет подбирается по обороту, числу сотрудников и объёму документов. Ниже ориентиры «от», точную сумму называю после бесплатной проверки вашего учёта.</p>
+        <div class="chips">
+          <a href="#calc" class="solid" data-scroll="calc">Собрать расчёт <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="plans">
+        <div class="plan">
+          <h3>Старт</h3>
+          <div class="fit">ИП без сотрудников, небольшие обороты</div>
+          <div class="price">от 5 000 ₽ в месяц<small>Точная сумма после разбора вашей ситуации</small></div>
+          <a href="#calc" class="btn ghost" data-scroll="calc">Собрать расчёт</a>
+        </div>
+        <div class="plan featured">
+          <span class="lead-tag">Чаще всего выбирают</span>
+          <h3>Полное ведение</h3>
+          <div class="fit">ИП и ООО с сотрудниками, регулярный документооборот</div>
+          <div class="price">от 15 000 ₽ в месяц<small>Зависит от режима, сотрудников и документов</small></div>
+          <a href="#calc" class="btn" data-scroll="calc">Собрать расчёт <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="plan">
+          <h3>Контроль</h3>
+          <div class="fit">Учёт ведут ваши сотрудники, отвечаю за отчётность</div>
+          <div class="price">от 10 000 ₽ в месяц<small>Зависит от числа участков и периодичности проверок</small></div>
+          <a href="#calc" class="btn ghost" data-scroll="calc">Собрать расчёт</a>
+        </div>
+        <div class="plan">
+          <h3>Разовая задача</h3>
+          <div class="fit">Без договора на сопровождение</div>
+          <div class="price">1 000 ₽ в час<small>Объём в часах оцениваю до начала работы</small></div>
+          <a href="#/kontakty" class="btn ghost" data-link>Описать задачу</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="sec-head"><h2>Что входит в каждый пакет</h2></div>
+      <div class="tablewrap">
+        <table class="matrix">
+          <thead><tr><th>Работы</th><th>Старт</th><th>Полное ведение</th><th>Контроль</th><th>Разовая задача</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Ведение учёта и первички</td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+              <td class="cond">ведёт ваш бухгалтер</td>
+              <td class="off">не входит</td>
+            </tr>
+            <tr>
+              <td>Расчёт налогов и взносов</td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+              <td class="cond">по задаче</td>
+            </tr>
+            <tr>
+              <td>Составление и сдача отчётности</td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+            </tr>
+            <tr>
+              <td>Кадры и расчёт зарплаты</td>
+              <td class="off">не входит</td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+              <td class="cond">по согласованию</td>
+              <td class="off">не входит</td>
+            </tr>
+            <tr>
+              <td>Учёт НДС</td>
+              <td class="off">не входит</td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+              <td class="cond">по задаче</td>
+            </tr>
+            <tr>
+              <td>Ответы на требования и сверка с ФНС</td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+              <td><span class="yes"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>входит</span></td>
+              <td class="cond">по задаче</td>
+            </tr>
+            <tr>
+              <td>Консультации</td>
+              <td class="cond">по основам учёта</td>
+              <td class="cond">в течение месяца</td>
+              <td class="cond">по спорным операциям</td>
+              <td class="cond">разовая</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="calc">
+    <div class="wrap">
+      <div class="plate ruled">
+        <div class="sec-head"><h2>Соберите состав работ</h2><p>Пять вопросов, чтобы понять объём. В ответ пришлю состав работ и стоимость по вашей ситуации.</p></div>
+        <div class="contact-grid">
+          <div class="card">
+            <div class="field">
+              <label for="c-form">Форма бизнеса</label>
+              <select id="c-form"><option value="ip">ИП</option><option value="ooo">ООО</option></select>
+            </div>
+            <div class="field">
+              <label for="c-rezhim">Налоговый режим</label>
+              <select id="c-rezhim">
+                <option value="usn-d">УСН, доходы</option>
+                <option value="usn-dr">УСН, доходы минус расходы</option>
+                <option value="patent">Патент</option>
+                <option value="osno">ОСНО</option>
+                <option value="ne-znayu">Пока не знаю</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="c-sotr">Сотрудников</label>
+                <select id="c-sotr"><option value="0">Нет</option><option value="1-5">от 1 до 5</option><option value="6-15">от 6 до 15</option><option value="16+">больше 15</option></select>
+              </div>
+              <div class="field">
+                <label for="c-doc">Документов в месяц</label>
+                <select id="c-doc"><option value="do30">до 30</option><option value="30-100">от 30 до 100</option><option value="100+">больше 100</option></select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="c-nds">Оборот за прошлый год</label>
+              <select id="c-nds"><option value="do20">до 20 млн рублей</option><option value="ot20">больше 20 млн рублей</option><option value="new">бизнес только открылся</option></select>
+              <span class="help">От этого зависит, нужен ли учёт НДС.</span>
+            </div>
+            <button class="btn" id="calcBtn" type="button">Показать состав работ <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
+            <div class="result" id="calcResult">
+              <h4>В работу войдёт</h4>
+              <ul id="calcList"></ul>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Что дальше</h3>
+            <p class="muted" style="font-size:14.5px;margin-top:var(--s3)">Оставьте контакт, и я пришлю расчёт стоимости по собранному составу работ. Если что-то в списке лишнее, уберём.</p>
+            <form id="calcForm">
+              <div class="field" id="cf-name">
+                <label for="cf-name-i">Как к вам обращаться</label>
+                <input type="text" id="cf-name-i" placeholder="Имя">
+                <span class="err"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-alert"/></svg>Укажите имя</span>
+              </div>
+              <div class="field" id="cf-phone">
+                <label for="cf-phone-i">Телефон или мессенджер</label>
+                <input type="tel" id="cf-phone-i" placeholder="+7">
+                <span class="err"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-alert"/></svg>Укажите телефон, чтобы я могла ответить</span>
+              </div>
+              <label class="check" style="margin-bottom:var(--s4)">
+                <input type="checkbox" id="cf-ok">
+                <span>Согласен на обработку персональных данных</span>
+              </label>
+              <button class="btn" type="submit" style="width:100%">
+                <span class="spinner"></span><span class="lbl">Получить расчёт</span>
+              </button>
+            </form>
+            <div class="state-ok" id="calcOk">
+              <div class="ok"><svg class="ic ic-lg" viewBox="0 0 24 24"><use href="#i-check"/></svg></div>
+              <h3>Заявка отправлена</h3>
+              <p class="muted">Отвечу в рабочее время. Если вопрос срочный, напишите в мессенджер.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= ОБО МНЕ ================= -->
+<div class="page" id="p-o-nas">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <h1>Светлана <em>Ильющенкова</em></h1>
+        <p class="lead">Веду бухгалтерию малого бизнеса в Брянске. Работаю сама, поэтому знаю положение дел у каждого клиента без пересказов через менеджера.</p>
+        <p class="muted prose" style="font-size:14.5px">Здесь будет короткий рассказ о практике: сколько лет в профессии, в каких сферах больше всего клиентов, чем занималась до частной практики. Текст напишем по вашим ответам.</p>
+        <div class="hero-cta" style="margin-top:var(--s5)">
+          <a href="#/kontakty" class="btn" data-link>Познакомиться <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="portrait ruled">
+        <div class="slot" style="border:none;background:transparent;min-height:auto">
+          <svg class="ic ic-lg" viewBox="0 0 24 24"><use href="#i-image"/></svg>
+          <b>Фото Светланы</b>вертикальный портрет, 1200x1500
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="sec-head"><h2>Как я работаю</h2></div>
+      <div class="ledger">
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-clock"/></svg></span>
+          <b>Говорю до того, как стало проблемой</b>
+          <p>Сумму налога вы узнаёте заранее, о рисках по сделке предупреждаю до подписания, а не после требования.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
+          <b>Объясняю понятным языком</b>
+          <p>Не пересказываю статьи кодекса, говорю, что это значит для ваших денег и что нужно сделать.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-person"/></svg></span>
+          <b>Не беру больше, чем могу вести</b>
+          <p>Число клиентов ограничено сознательно. Это условие того, что вы получаете ответ в тот же день.</p>
+        </div>
+        <div class="row">
+          <span class="mark"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-shield"/></svg></span>
+          <b>Отвечаю за свою работу</b>
+          <p>Ответственность за ошибки закреплена в договоре, порядок возмещения обсуждаем до подписания.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="sec-head"><h2>Кому я подхожу</h2>
+        <p>Работаю с малым бизнесом Брянска и Брянской области, встречи очно или полностью удалённо — по вашему выбору.</p>
+      </div>
+      <div class="needs">
+        <div class="need"><b>ИП без сотрудников</b><p>Разовые услуги, товарка, услуги населению — тем, кому нужен понятный учёт без лишних вопросов.</p></div>
+        <div class="need"><b>Малый бизнес с командой</b><p>Розница, услуги, небольшое производство — где уже есть сотрудники, зарплата и кадровый учёт.</p></div>
+        <div class="need"><b>Продавцы маркетплейсов</b><p>Отчёты площадок, комиссии, возвраты — учёт с пониманием специфики, а не «первый раз вижу такой отчёт».</p></div>
+        <div class="need"><b>ООО на старте</b><p>Тем, кто только зарегистрировал компанию и хочет сразу поставить учёт правильно, а не разгребать через год.</p></div>
+        <div class="need"><b>Бизнес, меняющий бухгалтера</b><p>Если прежний специалист не устраивает или уходит — приму дела со сверкой, без потери истории.</p></div>
+        <div class="need"><b>Тем, кто попал под НДС в 2026 году</b><p>Учёт НДС на упрощёнке — отдельная компетенция, которую беру осознанно, а не «как получится».</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><h2>Образование и квалификация</h2><p>Блок под дипломы, аттестаты и свидетельства о повышении квалификации. Сканы клиентка присылает, показываем их галереей.</p></div>
+      <div class="tiles">
+        <div class="slot"><svg class="ic ic-lg" viewBox="0 0 24 24"><use href="#i-doc"/></svg><b>Диплом</b>скан или фото</div>
+        <div class="slot"><svg class="ic ic-lg" viewBox="0 0 24 24"><use href="#i-doc"/></svg><b>Аттестат</b>скан или фото</div>
+        <div class="slot"><svg class="ic ic-lg" viewBox="0 0 24 24"><use href="#i-doc"/></svg><b>Повышение квалификации</b>скан или фото</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= БЛОГ ================= -->
+<div class="page" id="p-blog">
+  <section class="lead-in">
+    <div class="wrap">
+      <div class="banner">
+        <h1>Блог о бухгалтерии и налогах</h1>
+        <p class="b-sub">Разборы изменений в законах, инструкции для ИП и ООО, налоговый календарь — простым языком, без пересказа кодекса. Раздел наполняется, ниже — темы первых статей.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="tiles">
+        <a class="tile" href="#/blog/nds-2026" data-link>
+          <span class="post-date">готовится</span>
+          <h3>НДС на упрощёнке с 2026 года: что изменилось и кого коснётся</h3>
+          <p>Разбор порога 20 млн рублей, выбора ставки и первых шагов после превышения.</p>
+          <span class="go">Читать далее <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="tile" href="#/blog/sistema-nalogooblozheniya" data-link>
+          <span class="post-date">готовится</span>
+          <h3>УСН, ОСНО или патент: как выбрать систему налогообложения</h3>
+          <p>На какие цифры смотреть при регистрации бизнеса и когда стоит менять режим.</p>
+          <span class="go">Читать далее <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="tile" href="#/blog/blokirovka-schjota" data-link>
+          <span class="post-date">готовится</span>
+          <h3>Заблокировали счёт по 115-ФЗ: что делать в первую очередь</h3>
+          <p>Какие документы собрать для банка и как не допустить повторной блокировки.</p>
+          <span class="go">Читать далее <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="tile" href="#/blog/vyezdnaya-proverka" data-link>
+          <span class="post-date">готовится</span>
+          <h3>Как подготовиться к выездной налоговой проверке</h3>
+          <p>Что проверяют в первую очередь и какие документы держать под рукой.</p>
+          <span class="go">Читать далее <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="tile" href="#/blog/marketpleisy" data-link>
+          <span class="post-date">готовится</span>
+          <h3>Бухгалтерия для маркетплейсов: с чего начать учёт</h3>
+          <p>Комиссии, логистика и возвраты — что из отчёта площадки идёт в учёт.</p>
+          <span class="go">Читать далее <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="tile" href="#/blog/nalogovyi-kalendar" data-link>
+          <span class="post-date">готовится</span>
+          <h3>Налоговый календарь: сроки отчётности и уплаты налогов</h3>
+          <p>Обновляемая шпаргалка по датам для ИП и ООО на разных режимах.</p>
+          <span class="go">Читать далее <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>Не нашли ответ в блоге</h2>
+          <p>Опишите свою ситуацию — отвечу лично, без ожидания в очереди публикаций.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="#/kontakty" class="btn white lg" data-link>Задать вопрос <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= СТАТЬЯ БЛОГА (заглушка) ================= -->
+<div class="page" id="p-blog-post">
+  <section class="lead-in">
+    <div class="wrap">
+      <a href="#/blog" class="linkar" data-link style="margin-bottom:var(--s5)">
+        <svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-left"/></svg>Все статьи
+      </a>
+      <div class="eyebrow" id="postDate">готовится</div>
+      <h1 id="postTitle">Заголовок статьи</h1>
+      <p class="lead" style="margin-top:var(--s4)">Материал готовится. Как только статья будет написана и вычитана, здесь появится полный текст — с примерами и ссылками на нормы, на которые можно опереться.</p>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="plate ruled" style="text-align:center;padding:var(--s8) var(--s5)">
+        <svg class="ic ic-lg" viewBox="0 0 24 24" style="margin:0 auto var(--s4);color:var(--ink-3)"><use href="#i-doc"/></svg>
+        <h3>Текст статьи ещё не опубликован</h3>
+        <p class="muted" style="margin-top:var(--s3);max-width:52ch;margin-left:auto;margin-right:auto">Тема уже в плане — сообщите, если она актуальна именно для вас, отвечу раньше публикации.</p>
+        <div class="hero-cta" style="justify-content:center;margin-top:var(--s5)">
+          <a href="#/kontakty" class="btn" data-link>Спросить сейчас <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+          <a href="#/blog" class="btn ghost" data-link>К другим темам</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= КОНТАКТЫ ================= -->
+<div class="page" id="p-kontakty">
+  <section class="lead-in">
+    <div class="wrap">
+      <div class="banner">
+        <h1>Связаться</h1>
+        <p class="b-sub">Опишите задачу своими словами. Если пойму по описанию, отвечу сразу, если нет, задам пару уточняющих вопросов. Первая проверка учёта бесплатна.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pinch">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="card contact-combo">
+          <div class="contact-list">
+            <a href="tel:+79103365274">
+              <svg class="ic" viewBox="0 0 24 24"><use href="#i-phone"/></svg>
+              <span><b>+7 910 336-52-74</b><span>звонок или мессенджер</span></span>
+            </a>
+            <a href="mailto:svetlanailyushenkova@gmail.com">
+              <svg class="ic" viewBox="0 0 24 24"><use href="#i-mail"/></svg>
+              <span><b>svetlanailyushenkova@gmail.com</b><span>для документов и вопросов по договору</span></span>
+            </a>
+            <div>
+              <svg class="ic" viewBox="0 0 24 24"><use href="#i-pin"/></svg>
+              <span><b>Брянск, улица Фокина, 195</b><span>встреча по договорённости, документы можно передать онлайн</span></span>
+            </div>
+            <div>
+              <svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg>
+              <span><b>Рабочее время</b><span>уточним у клиентки и поставим сюда</span></span>
+            </div>
+          </div>
+          <div class="mapbox">
+            <div class="map-fb">
+              <svg class="ic ic-lg" viewBox="0 0 24 24"><use href="#i-pin"/></svg>
+              <b>Брянск, улица Фокина, 195</b>
+              <a class="btn sm" href="https://yandex.ru/maps/?text=%D0%91%D1%80%D1%8F%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A4%D0%BE%D0%BA%D0%B8%D0%BD%D0%B0%2C%20195" target="_blank" rel="noopener">Открыть в Яндекс.Картах</a>
+            </div>
+            <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%91%D1%80%D1%8F%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A4%D0%BE%D0%BA%D0%B8%D0%BD%D0%B0%2C%20195&z=17" loading="lazy" title="Карта: Брянск, улица Фокина, 195"></iframe>
+          </div>
+        </div>
+        <div class="card write-card">
+          <h3>Написать</h3>
+          <form id="mainForm">
+            <div class="form-row">
+              <div class="field" id="m-name">
+                <label for="m-name-i">Имя</label>
+                <input type="text" id="m-name-i" placeholder="Как к вам обращаться">
+                <span class="err"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-alert"/></svg>Укажите имя</span>
+              </div>
+              <div class="field" id="m-phone">
+                <label for="m-phone-i">Телефон</label>
+                <input type="tel" id="m-phone-i" placeholder="+7">
+                <span class="err"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-alert"/></svg>Укажите телефон</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="m-type">С чем нужна помощь</label>
+              <select id="m-type">
+                <option>Постоянное ведение бухгалтерии</option>
+                <option>Разовая отчётность</option>
+                <option>Восстановление учёта</option>
+                <option>НДС на упрощёнке</option>
+                <option>Требование из налоговой или блокировка счёта</option>
+                <option>Консультация</option>
+              </select>
+            </div>
+            <div class="field field-grow">
+              <label for="m-text">Коротко о ситуации</label>
+              <textarea id="m-text" rows="4" placeholder="Форма бизнеса, режим, сотрудники, что уже сдано"></textarea>
+              <span class="help">Чем конкретнее, тем точнее ответ.</span>
+            </div>
+            <label class="check" style="margin-bottom:var(--s4)">
+              <input type="checkbox" id="m-ok">
+              <span>Согласен на обработку персональных данных и с политикой конфиденциальности</span>
+            </label>
+            <button class="btn" type="submit" style="width:100%">
+              <span class="spinner"></span><span class="lbl">Отправить</span>
+            </button>
+          </form>
+          <div class="state-ok" id="mainOk">
+            <div class="ok"><svg class="ic ic-lg" viewBox="0 0 24 24"><use href="#i-check"/></svg></div>
+            <h3>Сообщение отправлено</h3>
+            <p class="muted">Отвечу в рабочее время. В прототипе форма ничего не шлёт, на боевом сайте письмо придёт на почту и в мессенджер.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="bw">Ильющенкова</div>
+        <p class="bt">Личный бухгалтер для ИП и ООО</p>
+      </div>
+      <div class="foot-ct">
+        <a class="f-tel" href="tel:+79103365274">+7 910 336-52-74</a>
+        <a class="f-mail" href="mailto:svetlanailyushenkova@gmail.com">svetlanailyushenkova@gmail.com</a>
+      </div>
+    </div>
+    <div class="foot-grid">
+      <div>
+        <h4>Разделы</h4>
+        <a href="#/uslugi" data-link>Услуги</a>
+        <a href="#/tarify" data-link>Пакеты и цены</a>
+        <a href="#/o-nas" data-link>Обо мне</a>
+        <a href="#/blog" data-link>Блог</a>
+        <a href="#/kontakty" data-link>Контакты</a>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <a href="#/dlya-ip" data-link>Бухгалтерия для ИП</a>
+        <a href="#/dlya-ooo" data-link>Бухгалтерия для ООО</a>
+        <a href="#/nds-2026" data-link>НДС на упрощёнке</a>
+      </div>
+      <div>
+        <h4>Адрес</h4>
+        <p>Брянск, улица Фокина, 195</p>
+        <p>Встреча по договорённости, документы можно передать онлайн</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>ИП Ильющенкова С. В. Реквизиты подставим из документов.</span>
+      <span>Политика конфиденциальности и согласие на обработку данных</span>
+    </div>
+  </div>
+</footer>
+
+<aside id="tweak" class="closed">
+  <div class="head" id="tweakHead"><span>Настройка стиля</span><span id="tweakToggle">+</span></div>
+  <div class="body">
+    <label>Основной цвет
+      <div class="swatches">
+        <button type="button" data-accent="#1f6fd0" style="background:#1f6fd0" aria-label="синий"></button>
+        <button type="button" data-accent="#12726b" style="background:#12726b" aria-label="тёмная бирюза"></button>
+        <button type="button" data-accent="#1b5e4b" style="background:#1b5e4b" aria-label="зелёный"></button>
+        <button type="button" data-accent="#3d4552" style="background:#3d4552" aria-label="графит"></button>
+      </div>
+    </label>
+    <label>Скругление
+      <input type="range" data-var="--r-card" min="4" max="32" step="2" value="24" data-unit="px">
+    </label>
+    <label>Линовка
+      <select id="ruleSel"><option value="on">видна</option><option value="off">убрать</option></select>
+    </label>
+    <label>Тема
+      <select id="themeSel">
+        <option value="auto">как в системе</option>
+        <option value="light">светлая</option>
+        <option value="dark">тёмная</option>
+      </select>
+    </label>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var routes = {
+    '/':'p-home','/uslugi':'p-uslugi','/dlya-ip':'p-dlya-ip','/dlya-ooo':'p-dlya-ooo',
+    '/nds-2026':'p-nds-2026','/tarify':'p-tarify','/o-nas':'p-o-nas','/blog':'p-blog','/kontakty':'p-kontakty'
+  };
+  var menu = document.getElementById('menu');
+
+  // черновые статьи блога: слаг -> заголовок карточки. Раздел ждёт реального текста
+  var blogPosts = {
+    'nds-2026':'НДС на упрощёнке с 2026 года: что изменилось и кого коснётся',
+    'sistema-nalogooblozheniya':'УСН, ОСНО или патент: как выбрать систему налогообложения',
+    'blokirovka-schjota':'Заблокировали счёт по 115-ФЗ: что делать в первую очередь',
+    'vyezdnaya-proverka':'Как подготовиться к выездной налоговой проверке',
+    'marketpleisy':'Бухгалтерия для маркетплейсов: с чего начать учёт',
+    'nalogovyi-kalendar':'Налоговый календарь: сроки отчётности и уплаты налогов'
+  };
+
+  // на боевом сайте это будут отдельные страницы со своими title/description
+  var pageMeta = {
+    '/':['Бухгалтерские услуги в Брянске для ИП и ООО — Ильющенкова','Бухгалтерское сопровождение ИП и ООО в Брянске: отчётность в срок, налоги заранее, ответственность в договоре. Личный бухгалтер Светлана Ильющенкова.'],
+    '/uslugi':['Бухгалтерские услуги в Брянске: сопровождение и разовые работы','Ведение учёта ИП и ООО, восстановление учёта, отчётность разово, кадры и зарплата, ответы на требования ФНС. Брянск, работа онлайн по всей России.'],
+    '/dlya-ip':['Бухгалтер для ИП в Брянске: УСН, патент, сотрудники','Ведение учёта ИП: налоги и взносы, КУДиР, декларации, кадры. Суммы налогов заранее, отчёты в срок. От 5 000 ₽ в месяц.'],
+    '/dlya-ooo':['Бухгалтер для ООО в Брянске: УСН и ОСНО, включая НДС','Полный учёт ООО: первичка, НДС, зарплата, годовой баланс. Приём дел у прежнего бухгалтера со сверкой по налогам.'],
+    '/nds-2026':['НДС на УСН с 2026 года: порог 20 млн, ставки 5 и 7 процентов','Проверьте, попадаете ли вы под НДС на упрощёнке: калькулятор порога, выбор ставки, счета-фактуры и декларация. Разбор по документам.'],
+    '/tarify':['Пакеты бухгалтерского сопровождения: цены от 5 000 ₽ в месяц','Старт от 5 000 ₽, полное ведение от 15 000 ₽, контроль от 10 000 ₽ в месяц, разовые задачи 1 000 ₽ в час. Калькулятор состава работ.'],
+    '/o-nas':['Светлана Ильющенкова, частный бухгалтер в Брянске','Личный бухгалтер для малого бизнеса: работаю сама, отвечаю по договору, объясняю понятным языком.'],
+    '/blog':['Блог о бухгалтерии и налогах для малого бизнеса — Ильющенкова','Разборы изменений в налогах, инструкции для ИП и ООО, налоговый календарь. Простым языком, без воды.'],
+    '/kontakty':['Контакты бухгалтера в Брянске: телефон, почта, адрес','Телефон +7 910 336-52-74, Брянск, улица Фокина 195. Первая проверка учёта бесплатна.']
+  };
+  function render(){
+    var path = (location.hash.replace(/^#/,'') || '/').split('?')[0];
+    var slug = null;
+    var id;
+    if(path.indexOf('/blog/') === 0){
+      slug = path.slice('/blog/'.length);
+      id = 'p-blog-post';
+    } else {
+      id = routes[path] || routes['/'];
+    }
+    document.querySelectorAll('.page').forEach(function(p){ p.classList.toggle('active', p.id===id); });
+    menu.querySelectorAll('a').forEach(function(a){
+      var href = a.getAttribute('href');
+      a.classList.toggle('active', href === '#'+path || (slug && href === '#/blog'));
+    });
+    menu.classList.remove('open');
+    window.scrollTo(0,0);
+    if(slug){
+      var title = blogPosts[slug] || 'Статья готовится';
+      document.getElementById('postTitle').textContent = title;
+      document.title = title + ' — блог Ильющенковой';
+      var dd = document.getElementById('metaDesc');
+      if(dd) dd.setAttribute('content', 'Статья готовится к публикации. ' + title);
+    } else {
+      var m = pageMeta[path] || pageMeta['/'];
+      document.title = m[0];
+      var d = document.getElementById('metaDesc');
+      if(d) d.setAttribute('content', m[1]);
+    }
+  }
+  window.addEventListener('hashchange', render);
+  render();
+
+  document.getElementById('burger').addEventListener('click', function(){ menu.classList.toggle('open'); });
+
+  document.getElementById('hideBar').addEventListener('click', function(){
+    var b = document.getElementById('protobar');
+    b.style.display='none'; b.classList.remove('on');
+  });
+
+  document.querySelectorAll('[data-scroll]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      var t = document.getElementById(el.getAttribute('data-scroll'));
+      if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  function iconItem(text){
+    var li=document.createElement('li');
+    li.innerHTML='<svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-check"/></svg>';
+    li.appendChild(document.createTextNode(text));
+    return li;
+  }
+
+  /* ---- НДС чекер ---- */
+  document.getElementById('ndsCheck').addEventListener('click', function(){
+    var wrap = document.getElementById('f-oborot');
+    var val = parseFloat((document.getElementById('oborot').value || '').replace(',','.'));
+    if(!(val > 0)){ wrap.classList.add('invalid'); return; }
+    wrap.classList.remove('invalid');
+    var title, items;
+    if(val < 20){
+      title = 'В 2026 году НДС платить не нужно';
+      items = [
+        'Доход ниже 20 млн рублей, освобождение действует.',
+        'С 2027 года порог опустится до 15 млн, с 2028 года до 10 млн рублей.',
+        'Если растёте, учёт лучше подготовить заранее, а не в момент превышения.'
+      ];
+    } else if(val < 272.5){
+      title = 'Вы плательщик НДС, доступна пониженная ставка';
+      items = [
+        'Можно выбрать ставку 5 процентов без вычета входящего НДС.',
+        'Либо обычную ставку 22 процента с правом на вычет.',
+        'Нужны счета-фактуры, книги покупок и продаж, электронная декларация.',
+        'Выбор ставки считается по вашим закупкам, а не по общему правилу.'
+      ];
+    } else if(val < 490.5){
+      title = 'Вы плательщик НДС, пониженная ставка 7 процентов';
+      items = [
+        'Доступна ставка 7 процентов без вычета входящего НДС.',
+        'Либо обычная ставка 22 процента с вычетами.',
+        'Документооборот вырастет заметно, учёт стоит поставить отдельно.'
+      ];
+    } else {
+      title = 'Право на упрощёнку под вопросом';
+      items = [
+        'При таком доходе применяются обычные ставки НДС.',
+        'Нужно проверить, сохраняется ли право на УСН, и готовиться к общей системе.',
+        'Такую ситуацию разбираем по документам, а не по калькулятору.'
+      ];
+    }
+    document.getElementById('ndsTitle').textContent = title;
+    var ul = document.getElementById('ndsList'); ul.innerHTML = '';
+    items.forEach(function(t){ ul.appendChild(iconItem(t)); });
+    document.getElementById('ndsResult').classList.add('show');
+  });
+
+  /* ---- калькулятор состава работ ---- */
+  document.getElementById('calcBtn').addEventListener('click', function(){
+    var f = document.getElementById('c-form').value;
+    var r = document.getElementById('c-rezhim').value;
+    var sSel = document.getElementById('c-sotr');
+    var s = sSel.value;
+    var d = document.getElementById('c-doc').value;
+    var n = document.getElementById('c-nds').value;
+    var out = [];
+    out.push(f==='ip' ? 'Учёт ИП: КУДиР, расчёт налога и фиксированных взносов' : 'Учёт ООО: первичка, банк, касса, расчёты с контрагентами');
+    if(r==='usn-d') out.push('УСН доходы: расчёт налога, уведомления по ЕНС, годовая декларация');
+    if(r==='usn-dr') out.push('УСН доходы минус расходы: проверка расходов на принимаемость, декларация');
+    if(r==='patent') out.push('Патент: контроль лимитов, учёт доходов, совмещение режимов при необходимости');
+    if(r==='osno') out.push(f==='ip' ? 'ОСНО: НДФЛ предпринимателя, НДС, книги покупок и продаж' : 'ОСНО: налог на прибыль, НДС, имущественные налоги');
+    if(r==='ne-znayu') out.push('Подбор налогового режима под вашу деятельность с расчётом нагрузки');
+    if(s!=='0'){
+      out.push('Кадровый учёт и расчёт зарплаты, сотрудников ' + sSel.selectedOptions[0].textContent.trim());
+      out.push('Отчётность по сотрудникам в налоговую и СФР, больничные и отпускные');
+    } else {
+      out.push('Сотрудников нет: кадровый блок в работу не входит');
+    }
+    if(d==='30-100') out.push('Обработка первичных документов, средний объём');
+    if(d==='100+') out.push('Обработка первичных документов большого объёма, потребуется регламент обмена');
+    if(n==='ot20' && r!=='osno') out.push('Учёт НДС на упрощёнке: выбор ставки, счета-фактуры, книги, декларация');
+    if(n==='new') out.push('Постановка учёта с нуля: учётная политика, настройка обмена документами');
+    out.push('Сверка с налоговой и ответы на требования в течение договора');
+    var ul = document.getElementById('calcList'); ul.innerHTML='';
+    out.forEach(function(t){ ul.appendChild(iconItem(t)); });
+    document.getElementById('calcResult').classList.add('show');
+  });
+
+  /* ---- карусель отзывов ---- */
+  var qCar = document.getElementById('qCar');
+  if(qCar){
+    function slide(dir){
+      var q = qCar.querySelector('.quote');
+      var step = q ? q.getBoundingClientRect().width + 16 : qCar.clientWidth/2;
+      var target = Math.max(0, Math.min(qCar.scrollLeft + dir*step, qCar.scrollWidth - qCar.clientWidth));
+      qCar.scrollTo({left: target, behavior: 'smooth'});
+      // страховка: если плавная прокрутка не пошла, двигаем без анимации
+      setTimeout(function(){
+        if(Math.abs(qCar.scrollLeft - target) > 4){
+          qCar.style.scrollBehavior = 'auto';
+          qCar.scrollLeft = target;
+          qCar.style.scrollBehavior = '';
+        }
+      }, 280);
+    }
+    document.getElementById('qPrev').addEventListener('click', function(){ slide(-1); });
+    document.getElementById('qNext').addEventListener('click', function(){ slide(1); });
+  }
+
+  /* ---- формы ---- */
+  function bindForm(formId, okId, fields){
+    var form = document.getElementById(formId);
+    if(!form) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var valid = true;
+      fields.forEach(function(f){
+        var wrap = document.getElementById(f.wrap);
+        var input = document.getElementById(f.input);
+        var ok = f.check ? f.check(input) : input.value.trim().length > 1;
+        wrap.classList.toggle('invalid', !ok);
+        if(!ok) valid = false;
+      });
+      var agree = form.querySelector('input[type=checkbox]');
+      if(agree && !agree.checked){ agree.parentElement.style.color = '#b3253c'; valid = false; }
+      else if(agree){ agree.parentElement.style.color = ''; }
+      if(!valid) return;
+      var btn = form.querySelector('button[type=submit]');
+      btn.classList.add('loading');
+      btn.querySelector('.lbl').textContent = 'Отправляю';
+      setTimeout(function(){
+        btn.classList.remove('loading');
+        form.style.display = 'none';
+        document.getElementById(okId).classList.add('show');
+      }, 900);
+    });
+  }
+  bindForm('mainForm','mainOk',[
+    {wrap:'m-name', input:'m-name-i'},
+    {wrap:'m-phone', input:'m-phone-i', check:function(i){ return i.value.replace(/\D/g,'').length >= 10; }}
+  ]);
+  bindForm('calcForm','calcOk',[
+    {wrap:'cf-name', input:'cf-name-i'},
+    {wrap:'cf-phone', input:'cf-phone-i', check:function(i){ return i.value.replace(/\D/g,'').length >= 10; }}
+  ]);
+  bindForm('usForm','usOk',[
+    {wrap:'us-name', input:'us-name-i'},
+    {wrap:'us-phone', input:'us-phone-i', check:function(i){ return i.value.replace(/\D/g,'').length >= 10; }}
+  ]);
+
+  /* ---- панель стиля, прототип, снимаем перед продакшеном ---- */
+  var tweak = document.getElementById('tweak');
+  document.getElementById('tweakHead').addEventListener('click', function(){
+    tweak.classList.toggle('closed');
+    document.getElementById('tweakToggle').textContent = tweak.classList.contains('closed') ? '+' : '−';
+  });
+  tweak.querySelectorAll('[data-accent]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var c = b.dataset.accent;
+      var root = document.documentElement;
+      root.style.setProperty('--blue', c);
+      root.style.setProperty('--blue-2', 'color-mix(in srgb, '+c+' 82%, black)');
+      root.style.setProperty('--blue-soft', 'color-mix(in srgb, '+c+' 12%, white)');
+      root.style.setProperty('--blue-soft-2', 'color-mix(in srgb, '+c+' 24%, white)');
+      root.style.setProperty('--blue-grad', 'linear-gradient(96deg, color-mix(in srgb, '+c+' 82%, white) 0%, '+c+' 100%)');
+    });
+  });
+  tweak.querySelectorAll('[data-var]').forEach(function(el){
+    el.addEventListener('input', function(){
+      document.documentElement.style.setProperty(el.dataset.var, el.value + (el.dataset.unit||''));
+    });
+  });
+  document.getElementById('ruleSel').addEventListener('change', function(){
+    document.documentElement.style.setProperty('--rule', this.value==='on' ? 'color-mix(in srgb, var(--ink) 9%, transparent)' : 'transparent');
+  });
+  document.getElementById('themeSel').addEventListener('change', function(){
+    if(this.value === 'auto') document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', this.value);
+  });
+})();
+</script>
