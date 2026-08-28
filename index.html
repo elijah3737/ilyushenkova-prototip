@@ -156,7 +156,7 @@ section{padding:var(--s7) 0}
 section.lead-in{padding-top:var(--s5)}
 section.pinch{padding-top:var(--s5);padding-bottom:var(--s5)}
 section:last-of-type{padding-bottom:var(--s8)}
-.plate{background:var(--plate);border-radius:var(--r-card);padding:clamp(24px,3vw,46px)}
+.plate{background:var(--card);border-radius:var(--r-card);padding:clamp(24px,3vw,46px);box-shadow:var(--sh-sm)}
 .card{background:var(--card);border-radius:var(--r-card);padding:clamp(22px,2.3vw,30px);box-shadow:var(--sh-sm)}
 .sec-head{margin-bottom:var(--s6);max-width:52ch}
 .sec-head p{margin-top:var(--s3);color:var(--ink-2)}
@@ -320,6 +320,20 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);bo
 .check{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-2);font-weight:600}
 .check input{width:auto;margin-top:3px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
+/* калькулятор оборота: строка во всю ширину, а не узкая карточка по центру */
+.calc-wide{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s4) var(--s7);
+  align-items:end;margin-bottom:var(--s6)}
+.calc-copy{max-width:56ch}
+.calc-copy h3{margin:0}
+.calc-copy .muted{font-size:14.5px;margin:var(--s3) 0 0}
+.calc-form{display:flex;gap:var(--s4);align-items:flex-end}
+.calc-form .field{margin-bottom:0;width:min(280px,42vw)}
+.calc-wide .result{grid-column:1/-1;margin-top:var(--s2)}
+@media (max-width:820px){
+  .calc-wide{grid-template-columns:1fr;align-items:stretch}
+  .calc-form{flex-direction:column;align-items:stretch}
+  .calc-form .field{width:auto}
+}
 .result{background:var(--blue-soft);border-radius:var(--r-mid);padding:var(--s5);margin-top:var(--s4);display:none}
 .result.show{display:block}
 .result h4{font-size:15.5px;font-weight:900;margin:0 0 var(--s3)}
@@ -447,9 +461,6 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
   .enter > *{opacity:1;transform:none;animation:none}
   .btn:hover,a.tile:hover{transform:none}
 }
-
-/* линовка: мотив бухгалтерской ведомости. Двойной класс, чтобы шорткат background у .plate не сбивал слой */
-.ruled.ruled{background-image:repeating-linear-gradient(to bottom, transparent 0 33px, var(--rule) 33px 34px)}
 
 /* ---------- выпадающее меню «Услуги» ---------- */
 /* padding-bottom удерживает наведение через зазор до панели, margin-bottom той же
@@ -870,7 +881,7 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
 
   <section class="pinch">
     <div class="wrap">
-      <div class="plate ruled">
+      <div class="plate">
         <div class="sec-head"><h2>Почему учёт выгоднее отдать, чем держать в штате</h2></div>
         <div class="contact-grid" style="align-items:stretch">
           <div>
@@ -1076,7 +1087,7 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
 
   <section class="pinch">
     <div class="wrap">
-      <div class="plate ruled">
+      <div class="plate">
         <div class="sec-head" style="margin-bottom:var(--s5)"><h2>Годовая отчётность ООО</h2>
           <p>Помимо ежемесячных налогов, раз в год компания подводит итог — и здесь тоже нужна подготовка заранее, а не в последнюю неделю.</p>
         </div>
@@ -1107,15 +1118,19 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
 
   <section class="pinch" id="check">
     <div class="wrap">
-      <div class="card" style="max-width:600px;margin:0 auto var(--s6)">
-        <h3>Проверьте свой оборот</h3>
-        <p class="muted" style="font-size:14.5px;margin:var(--s3) 0 var(--s5)">Доход считается за прошлый год. При совмещении с патентом обороты складываются.</p>
-        <div class="field" id="f-oborot">
-          <label for="oborot">Доход за прошлый год, млн рублей</label>
-          <input type="number" id="oborot" placeholder="например, 24" min="0" step="0.1" inputmode="decimal">
-          <span class="err"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-alert"/></svg>Введите число больше нуля</span>
+      <div class="card calc-wide">
+        <div class="calc-copy">
+          <h3>Проверьте свой оборот</h3>
+          <p class="muted">Доход считается за прошлый год. При совмещении с патентом обороты складываются.</p>
         </div>
-        <button class="btn" id="ndsCheck" type="button">Проверить <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
+        <div class="calc-form">
+          <div class="field" id="f-oborot">
+            <label for="oborot">Доход за прошлый год, млн рублей</label>
+            <input type="number" id="oborot" placeholder="например, 24" min="0" step="0.1" inputmode="decimal">
+            <span class="err"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-alert"/></svg>Введите число больше нуля</span>
+          </div>
+          <button class="btn" id="ndsCheck" type="button">Проверить <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
+        </div>
         <div class="result" id="ndsResult">
           <h4 id="ndsTitle"></h4>
           <ul id="ndsList"></ul>
@@ -1167,7 +1182,7 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
 
   <section class="pinch">
     <div class="wrap">
-      <div class="plate ruled">
+      <div class="plate">
         <div class="sec-head" style="margin-bottom:var(--s5)"><h2>Что будет, если не заметить порог вовремя</h2></div>
         <div class="needs">
           <div class="need"><b>Доначислят налог задним числом</b><p>Если превышение обнаружит налоговая, а не вы, НДС посчитают с даты превышения — по всем отгрузкам за этот период, без права выбрать ставку заново.</p></div>
@@ -1304,7 +1319,7 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
 
   <section id="calc">
     <div class="wrap">
-      <div class="plate ruled">
+      <div class="plate">
         <div class="sec-head"><h2>Соберите состав работ</h2><p>Пять вопросов, чтобы понять объём. В ответ пришлём состав работ и стоимость по вашей ситуации.</p></div>
         <div class="contact-grid">
           <div class="card">
@@ -1391,7 +1406,7 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
           <a href="#/kontakty" class="btn" data-link>Познакомиться <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
-      <div class="portrait ruled">
+      <div class="portrait">
         <img src="images/o-nas.jpg" alt="Расчёты и ведение записей" loading="lazy">
       </div>
     </div>
@@ -1538,7 +1553,7 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
   <section class="pinch">
     <div class="wrap">
       <div class="article-body" id="postBody" style="display:none"></div>
-      <div class="plate ruled" id="postStub" style="text-align:center;padding:var(--s8) var(--s5)">
+      <div class="plate" id="postStub" style="text-align:center;padding:var(--s8) var(--s5)">
         <svg class="ic ic-lg" viewBox="0 0 24 24" style="margin:0 auto var(--s4);color:var(--ink-3)"><use href="#i-doc"/></svg>
         <h3>Текст статьи ещё не опубликован</h3>
         <p class="muted" style="margin-top:var(--s3);max-width:52ch;margin-left:auto;margin-right:auto">Тема уже в плане — сообщите, если она актуальна именно для вас, ответим раньше публикации.</p>
