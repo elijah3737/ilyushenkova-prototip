@@ -170,7 +170,8 @@ section:last-of-type{padding-bottom:var(--s8)}
 .hero-cta{display:flex;gap:var(--s3);flex-wrap:wrap}
 .hero-note{margin-top:var(--s5);font-size:13.5px;color:var(--ink-2);font-weight:600;display:flex;align-items:center;gap:8px}
 .portrait{position:relative;border-radius:var(--r-card);overflow:hidden;background:var(--plate);
-  box-shadow:var(--sh);aspect-ratio:1/1;display:grid;place-items:center;padding:20px}
+  box-shadow:var(--sh);aspect-ratio:1/1;display:grid;place-items:center}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .portrait::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(180deg, transparent 38%, color-mix(in srgb, var(--ink) 14%, transparent) 72%, color-mix(in srgb, var(--ink) 42%, transparent))}
 
@@ -592,7 +593,7 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
         <p class="hero-note"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-shield"/></svg>Первая проверка учёта бесплатна и ни к чему не обязывает</p>
       </div>
       <div class="portrait ruled">
-        <img src="images/hero.jpg" alt="Бухгалтерский учёт: документы и расчёты" loading="eager" style="width:100%;height:100%;object-fit:cover">
+        <img src="images/hero.jpg" alt="Калькулятор для бухгалтерских расчётов" loading="eager">
       </div>
     </div>
   </div>
@@ -1386,7 +1387,7 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
         </div>
       </div>
       <div class="portrait ruled">
-        <img src="images/o-nas.jpg" alt="Работа с отчётностью и расчётами" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+        <img src="images/o-nas.jpg" alt="Расчёты и ведение записей" loading="lazy">
       </div>
     </div>
   </div>
