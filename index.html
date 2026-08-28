@@ -164,9 +164,10 @@ section:last-of-type{padding-bottom:var(--s8)}
 /* ---------- первый экран ---------- */
 .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(24px,3.4vw,56px);align-items:center;
   padding:var(--s7) 0 var(--s6)}
-.hero-stage{position:relative;border-radius:var(--r-card);overflow:hidden;background:var(--plate);
-  box-shadow:var(--sh);margin:var(--s6) 0 var(--s5);isolation:isolate;
+.hero-stage{position:relative;overflow:hidden;background:var(--plate);isolation:isolate;
+  margin-bottom:var(--s5);
   min-height:clamp(500px,50vw,680px);display:flex;flex-direction:column;justify-content:space-between}
+.hero-stage > .wrap{flex:1;display:flex;flex-direction:column;justify-content:space-between;width:100%}
 .hero-stage img.stage-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:76% 50%;z-index:-2}
 .hero-stage::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:linear-gradient(96deg,
@@ -174,8 +175,8 @@ section:last-of-type{padding-bottom:var(--s8)}
     color-mix(in srgb, var(--bg) 78%, transparent) 28%,
     color-mix(in srgb, var(--bg) 24%, transparent) 50%,
     transparent 66%)}
-.hero-copy{padding:clamp(28px,3.6vw,58px) clamp(24px,3.4vw,54px) 0;max-width:min(560px,58%)}
-.hero-panel{padding:clamp(20px,2.4vw,32px)}
+.hero-copy{padding:clamp(28px,3.6vw,58px) 0 0;max-width:min(560px,58%)}
+.hero-panel{padding:clamp(20px,2.4vw,32px) 0}
 .hero-stage .facts{background:color-mix(in srgb, var(--card) 92%, transparent);border-color:transparent;
   box-shadow:0 18px 44px -34px rgba(20,30,50,.7)}
 .hero h1 em,.hero-copy h1 em{font-style:normal;color:var(--blue)}
@@ -492,8 +493,8 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
   .hero-stage{min-height:0;background:var(--card)}
   .hero-stage img.stage-bg{position:relative;z-index:0;width:100%;height:clamp(200px,42vw,300px);object-position:72% 50%}
   .hero-stage::before{display:none}
-  .hero-copy{max-width:none;padding:var(--s6) clamp(20px,4vw,32px) 0}
-  .hero-panel{padding:var(--s6) clamp(20px,4vw,32px) clamp(20px,4vw,32px)}
+  .hero-copy{max-width:none;padding:var(--s6) 0 0}
+  .hero-panel{padding:var(--s6) 0 var(--s6)}
   .hero-stage .facts{box-shadow:none;border-color:var(--line)}
   .contact-grid,.cta,.quotes,.form-row{grid-template-columns:1fr}
   .cta-actions{flex-direction:row;flex-wrap:wrap}
@@ -589,9 +590,9 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
 
 <!-- ================= ГЛАВНАЯ ================= -->
 <div class="page" id="p-home">
-  <div class="wrap">
-    <div class="hero-stage enter">
-      <img class="stage-bg" src="images/hero-wide.jpg" alt="Рабочий стол бухгалтера: ноутбук с показателями, папки «Отчётность», «Налоги», «Договоры», калькулятор" loading="eager">
+  <div class="hero-stage enter">
+    <img class="stage-bg" src="images/hero-wide.jpg" alt="Рабочий стол бухгалтера: ноутбук с показателями, папки «Отчётность», «Налоги», «Договоры», калькулятор" loading="eager">
+    <div class="wrap">
       <div class="hero-copy">
         <h1>Веду бухгалтерию <em>ИП и ООО</em></h1>
         <p class="lead">Отчётность сдаётся в срок, налоги посчитаны заранее, требования из налоговой закрываю сама.</p>
