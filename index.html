@@ -1,4 +1,5 @@
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Бухгалтерские услуги для построения грамотного бухгалтерского учета</title>
 <meta name="description" id="metaDesc" content="Бухгалтерское сопровождение ИП и ООО в Брянске: отчётность в срок, налоги посчитаны заранее, ответственность закреплена в договоре.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -163,8 +164,22 @@ section:last-of-type{padding-bottom:var(--s8)}
 /* ---------- первый экран ---------- */
 .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(24px,3.4vw,56px);align-items:center;
   padding:var(--s7) 0 var(--s6)}
-.hero h1 em{font-style:normal;color:var(--blue)}
-.hero .lead{margin:var(--s5) 0 var(--s6)}
+.hero-stage{position:relative;border-radius:var(--r-card);overflow:hidden;background:var(--plate);
+  box-shadow:var(--sh);margin:var(--s6) 0 var(--s5);isolation:isolate;
+  min-height:clamp(500px,50vw,680px);display:flex;flex-direction:column;justify-content:space-between}
+.hero-stage img.stage-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:76% 50%;z-index:-2}
+.hero-stage::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(96deg,
+    color-mix(in srgb, var(--bg) 92%, transparent) 0%,
+    color-mix(in srgb, var(--bg) 78%, transparent) 28%,
+    color-mix(in srgb, var(--bg) 24%, transparent) 50%,
+    transparent 66%)}
+.hero-copy{padding:clamp(28px,3.6vw,58px) clamp(24px,3.4vw,54px) 0;max-width:min(560px,58%)}
+.hero-panel{padding:clamp(20px,2.4vw,32px)}
+.hero-stage .facts{background:color-mix(in srgb, var(--card) 92%, transparent);border-color:transparent;
+  box-shadow:0 18px 44px -34px rgba(20,30,50,.7)}
+.hero h1 em,.hero-copy h1 em{font-style:normal;color:var(--blue)}
+.hero .lead,.hero-copy .lead{margin:var(--s5) 0 var(--s6)}
 .hero-cta{display:flex;gap:var(--s3);flex-wrap:wrap}
 .hero-note{margin-top:var(--s5);font-size:13.5px;color:var(--ink-2);font-weight:600;display:flex;align-items:center;gap:8px}
 .portrait{position:relative;border-radius:var(--r-card);overflow:hidden;background:var(--plate);
@@ -463,9 +478,23 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
   .fact:nth-child(n+3){border-top:1px solid var(--line)}
   .calendar{grid-template-columns:1fr}
 }
+@media (max-width:1080px){
+  .hero-copy{max-width:min(520px,68%)}
+  .hero-stage::before{background:linear-gradient(96deg,
+    color-mix(in srgb, var(--bg) 95%, transparent) 0%,
+    color-mix(in srgb, var(--bg) 88%, transparent) 46%,
+    color-mix(in srgb, var(--bg) 40%, transparent) 68%,
+    transparent 84%)}
+}
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;padding-top:var(--s6)}
   .portrait{aspect-ratio:16/10;order:-1}
+  .hero-stage{min-height:0;background:var(--card)}
+  .hero-stage img.stage-bg{position:relative;z-index:0;width:100%;height:clamp(200px,42vw,300px);object-position:72% 50%}
+  .hero-stage::before{display:none}
+  .hero-copy{max-width:none;padding:var(--s6) clamp(20px,4vw,32px) 0}
+  .hero-panel{padding:var(--s6) clamp(20px,4vw,32px) clamp(20px,4vw,32px)}
+  .hero-stage .facts{box-shadow:none;border-color:var(--line)}
   .contact-grid,.cta,.quotes,.form-row{grid-template-columns:1fr}
   .cta-actions{flex-direction:row;flex-wrap:wrap}
   .flow{grid-template-columns:1fr 1fr}
@@ -561,8 +590,9 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
 <!-- ================= ГЛАВНАЯ ================= -->
 <div class="page" id="p-home">
   <div class="wrap">
-    <div class="hero enter">
-      <div>
+    <div class="hero-stage enter">
+      <img class="stage-bg" src="images/hero-wide.jpg" alt="Рабочий стол бухгалтера: ноутбук с показателями, папки «Отчётность», «Налоги», «Договоры», калькулятор" loading="eager">
+      <div class="hero-copy">
         <h1>Веду бухгалтерию <em>ИП и ООО</em></h1>
         <p class="lead">Отчётность сдаётся в срок, налоги посчитаны заранее, требования из налоговой закрываю сама.</p>
         <div class="hero-cta">
@@ -571,22 +601,16 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
         </div>
         <p class="hero-note"><svg class="ic ic-sm" viewBox="0 0 24 24"><use href="#i-shield"/></svg>Первая проверка учёта бесплатна и ни к чему не обязывает</p>
       </div>
-      <div class="portrait ruled">
-        <img src="images/hero.jpg" alt="Калькулятор для бухгалтерских расчётов" loading="eager">
+      <div class="hero-panel">
+        <div class="facts">
+          <div class="fact"><span class="fic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-person"/></svg></span><b>Личный бухгалтер</b><span>Работаете с одним человеком, а не с колл-центром</span></div>
+          <div class="fact"><span class="fic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><b>Все режимы</b><span>УСН, ОСНО, патент и совмещение, с сотрудниками и без</span></div>
+          <div class="fact"><span class="fic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg></span><b>Ответственность в договоре</b><span>Порядок возмещения штрафов по моей вине закреплён письменно</span></div>
+          <div class="fact"><span class="fic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg></span><b>Ответ в тот же день</b><span>Число клиентов ограничено сознательно</span></div>
+        </div>
       </div>
     </div>
   </div>
-
-  <section class="pinch">
-    <div class="wrap">
-      <div class="facts">
-        <div class="fact"><span class="fic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-person"/></svg></span><b>Личный бухгалтер</b><span>Работаете с одним человеком, а не с колл-центром</span></div>
-        <div class="fact"><span class="fic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><b>Все режимы</b><span>УСН, ОСНО, патент и совмещение, с сотрудниками и без</span></div>
-        <div class="fact"><span class="fic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg></span><b>Ответственность в договоре</b><span>Порядок возмещения штрафов по моей вине закреплён письменно</span></div>
-        <div class="fact"><span class="fic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg></span><b>Ответ в тот же день</b><span>Число клиентов ограничено сознательно</span></div>
-      </div>
-    </div>
-  </section>
 
   <section class="pinch">
     <div class="wrap">
