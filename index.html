@@ -17,7 +17,19 @@
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    ym(112066374, "init", {ssr:true, webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
+    // trackHash обязателен: навигация по сайту идёт через #/, без него Метрика
+    // видит один просмотр на весь визит и не показывает, какие разделы смотрят
+    ym(112066374, "init", {webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true, trackHash:true});
+  }
+
+  // Цели шлём через объект счётчика, а не через ym(): счётчик подключается
+  // динамически (после согласия на cookie), и в этом случае глобальная ym
+  // остаётся заглушкой-накопителем — вызовы reachGoal через неё теряются.
+  function goal(name){
+    var c = window['yaCounter112066374'];
+    if (c && typeof c.reachGoal === 'function') { c.reachGoal(name); return true; }
+    if (typeof window.ym === 'function') { window.ym(112066374, 'reachGoal', name); }
+    return false;
   }
 </script>
 <title>Бухгалтерские услуги для построения грамотного бухгалтерского учета</title>
@@ -2208,7 +2220,7 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
           form.style.display = 'none';
           document.getElementById(okId).classList.add('show');
           // цель Метрики — по ней считаются конверсии Директа
-          if(typeof ym === 'function'){ ym(112066374, 'reachGoal', 'zayavka'); }
+          goal('zayavka');
         } else {
           alert((res && res.msg) ? res.msg : 'Не удалось отправить. Позвоните: +7 910 336-52-74');
         }
@@ -2242,9 +2254,9 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
     var a = e.target.closest && e.target.closest('a');
     if(!a || typeof ym !== 'function') return;
     var href = a.getAttribute('href') || '';
-    if(href.indexOf('tel:') === 0)            ym(112066374, 'reachGoal', 'click_phone');
-    else if(href.indexOf('mailto:') === 0)    ym(112066374, 'reachGoal', 'click_email');
-    else if(/wa\.me|t\.me|api\.whatsapp/.test(href)) ym(112066374, 'reachGoal', 'click_messenger');
+    if(href.indexOf('tel:') === 0)            goal('click_phone');
+    else if(href.indexOf('mailto:') === 0)    goal('click_email');
+    else if(/wa\.me|t\.me|api\.whatsapp/.test(href)) goal('click_messenger');
   });
 
 
