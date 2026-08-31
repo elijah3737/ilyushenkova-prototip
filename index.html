@@ -1,10 +1,63 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#1f6fd0">
+<link rel="canonical" href="https://buh-online32.ru/">
+<!-- Яндекс.Метрика подключается ТОЛЬКО после согласия на cookie (152-ФЗ).
+     Функция вызывается из cookie-баннера внизу страницы. -->
+<script>
+  window.__metrikaLoaded = false;
+  function loadMetrika(){
+    if (window.__metrikaLoaded) return;
+    window.__metrikaLoaded = true;
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112066374, "init", {ssr:true, webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
+  }
+</script>
 <title>Бухгалтерские услуги для построения грамотного бухгалтерского учета</title>
 <meta name="description" id="metaDesc" content="Бухгалтерское сопровождение ИП и ООО в Брянске: отчётность в срок, налоги посчитаны заранее, ответственность закреплена в договоре.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* Mulish — локальные шрифты. Подключены со своего сервера,
+   чтобы данные посетителей не уходили на серверы Google (152-ФЗ, трансграничная передача). */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(fonts/mulish-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(fonts/mulish-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(fonts/mulish-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(fonts/mulish-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
 
 <style>
 /* Основа взята из нашего проекта Глав (Mulish, синий, пилюли, плиты со скруглением).
@@ -91,6 +144,28 @@ svg{display:block}
 .muted{color:var(--ink-2);font-weight:500}
 .lead{font-size:clamp(15.5px,1.2vw,18px);color:var(--ink-2);font-weight:500;max-width:46ch}
 .prose{max-width:68ch}
+/* cookie-баннер: показывается до получения согласия на аналитику */
+#cookie{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
+  background:var(--card);border-top:1px solid var(--line);box-shadow:0 -8px 32px rgba(16,24,40,.10)}
+#cookie.show{display:block}
+#cookie .in{max-width:var(--maxw);margin:0 auto;padding:16px 22px;
+  display:flex;align-items:center;gap:var(--s5);flex-wrap:wrap}
+#cookie p{margin:0;flex:1 1 420px;font-size:13.5px;color:var(--ink-2);line-height:1.55}
+#cookie .acts{display:flex;gap:10px;flex-wrap:wrap}
+#cookie button{font:inherit;font-size:13.5px;font-weight:800;cursor:pointer;
+  padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+#cookie button.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+@media (max-width:640px){
+  #cookie .in{padding:14px 16px;gap:12px}
+  #cookie .acts{width:100%}
+  #cookie .acts button{flex:1}
+}
+.legal{max-width:84ch;margin:0 auto}
+.legal h2{font-size:1.12rem;margin:var(--s6) 0 var(--s3)}
+.legal p{margin:0 0 var(--s4);color:var(--ink-2);line-height:1.7;font-size:14.5px}
+.legal ul{margin:0 0 var(--s4);padding-left:20px;color:var(--ink-2);font-size:14.5px;line-height:1.7}
+.legal li{margin-bottom:6px}
+.legal .muted{font-size:13px}
 .article-body{max-width:68ch}
 .article-body p{margin:0 0 var(--s5);color:var(--ink-2);line-height:1.7;font-size:15.5px}
 .article-body h2{font-size:1.32rem;margin:var(--s7) 0 var(--s4)}
@@ -741,34 +816,9 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
     </div>
   </section>
 
-  <section class="pinch">
-    <div class="wrap">
-      <div class="car-head">
-        <h2>Отзывы клиентов</h2>
-        <div class="car-nav">
-          <button class="car-btn" id="qPrev" type="button" aria-label="Предыдущие отзывы"><svg class="ic" viewBox="0 0 24 24"><use href="#i-left"/></svg></button>
-          <button class="car-btn" id="qNext" type="button" aria-label="Следующие отзывы"><svg class="ic" viewBox="0 0 24 24"><use href="#i-right"/></svg></button>
-        </div>
-      </div>
-      <div class="car" id="qCar">
-        <div class="quote">
-          <svg class="ic ic-lg qm" viewBox="0 0 24 24" style="stroke:none;fill:currentColor"><use href="#i-quote"/></svg>
-          <p>Заглушка отзыва. Заменим реальным текстом клиента после согласования с ним.</p>
-          <div class="who">Имя, сфера бизнеса, город</div>
-        </div>
-        <div class="quote">
-          <svg class="ic ic-lg qm" viewBox="0 0 24 24" style="stroke:none;fill:currentColor"><use href="#i-quote"/></svg>
-          <p>Вторая заглушка. Лучше всего работают отзывы с 2ГИС и Яндекс Карт со ссылкой на источник.</p>
-          <div class="who">Имя, сфера бизнеса, город</div>
-        </div>
-        <div class="quote">
-          <svg class="ic ic-lg qm" viewBox="0 0 24 24" style="stroke:none;fill:currentColor"><use href="#i-quote"/></svg>
-          <p>Третья заглушка: карусель листается стрелками, новые отзывы добавляются без правки вёрстки.</p>
-          <div class="who">Имя, сфера бизнеса, город</div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Блок отзывов убран до появления настоящих отзывов клиентов.
+       Разметка и карусель — в истории git, вернуть можно за минуту. -->
+
 
   <section>
     <div class="wrap">
@@ -922,7 +972,7 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
           </div>
           <label class="check">
             <input type="checkbox" id="us-ok">
-            <span>Согласен на обработку персональных данных</span>
+            <span>Согласен на <a href="#/soglasie" data-link>обработку персональных данных</a> и с <a href="#/politika" data-link>политикой конфиденциальности</a></span>
           </label>
         </form>
         <div class="state-ok" id="usOk">
@@ -1204,7 +1254,7 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
           <a href="#/kontakty" class="btn white lg" data-link>Записаться на разбор <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
-      <p class="muted" style="font-size:12.5px;margin-top:var(--s4)">Пороги и ставки указаны по нормам, действующим с 1 января 2026 года. Перед публикацией сверим формулировки с клиенткой.</p>
+      <p class="muted" style="font-size:12.5px;margin-top:var(--s4)">Пороги и ставки указаны по нормам, действующим с 1 января 2026 года.</p>
     </div>
   </section>
 </div>
@@ -1374,7 +1424,7 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
               </div>
               <label class="check" style="margin-bottom:var(--s4)">
                 <input type="checkbox" id="cf-ok">
-                <span>Согласен на обработку персональных данных</span>
+                <span>Согласен на <a href="#/soglasie" data-link>обработку персональных данных</a> и с <a href="#/politika" data-link>политикой конфиденциальности</a></span>
               </label>
               <button class="btn" type="submit" style="width:100%">
                 <span class="spinner"></span><span class="lbl">Получить расчёт</span>
@@ -1596,7 +1646,7 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
             </div>
             <div>
               <svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg>
-              <span><b>Рабочее время</b><span>уточним у клиентки и поставим сюда</span></span>
+              <span><b>Как связаться</b><span>звоните или пишите в мессенджер — отвечаем в рабочее время</span></span>
             </div>
           </div>
           <div class="mapbox">
@@ -1641,7 +1691,7 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
             </div>
             <label class="check" style="margin-bottom:var(--s4)">
               <input type="checkbox" id="m-ok">
-              <span>Согласен на обработку персональных данных и с политикой конфиденциальности</span>
+              <span>Согласен на <a href="#/soglasie" data-link>обработку персональных данных</a> и с <a href="#/politika" data-link>политикой конфиденциальности</a></span>
             </label>
             <button class="btn" type="submit" style="width:100%">
               <span class="spinner"></span><span class="lbl">Отправить</span>
@@ -1650,13 +1700,184 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
           <div class="state-ok" id="mainOk">
             <div class="ok"><svg class="ic ic-lg" viewBox="0 0 24 24"><use href="#i-check"/></svg></div>
             <h3>Сообщение отправлено</h3>
-            <p class="muted">Ответим в рабочее время. В прототипе форма ничего не шлёт, на боевом сайте письмо придёт на почту и в мессенджер.</p>
+            <p class="muted">Ответим в рабочее время. Если вопрос срочный, позвоните: +7 910 336-52-74.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 </div>
+
+<!-- ================= ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ ================= -->
+<div class="page" id="p-politika">
+  <section class="pinch">
+    <div class="wrap">
+      <div class="sec-head"><h1>Политика конфиденциальности</h1></div>
+      <div class="plate legal">
+        <p class="muted">Редакция от 31 августа 2026 года</p>
+
+        <h2>1. Общие положения</h2>
+        <p>Настоящая Политика определяет порядок обработки и защиты персональных данных
+        физических лиц (далее — Пользователи), пользующихся сайтом buh-online32.ru
+        (далее — Сайт), и составлена в соответствии с Федеральным законом от 27.07.2006
+        № 152-ФЗ «О персональных данных».</p>
+        <p>Использование Сайта означает согласие Пользователя с настоящей Политикой.
+        В случае несогласия Пользователю следует прекратить использование Сайта.</p>
+
+        <h2>2. Оператор персональных данных</h2>
+        <ul>
+          <li>Индивидуальный предприниматель Ильющенкова Светлана Викторовна</li>
+          <li>ИНН 325002306080, ОГРНИП 324320000025364</li>
+          <li>Адрес: 241050, Брянская область, г. Брянск, ул. Фокина, д. 195, кв. 268</li>
+          <li>Электронная почта: svetlanailyushenkova@gmail.com</li>
+          <li>Телефон: +7 910 336-52-74</li>
+        </ul>
+
+        <h2>3. Какие данные обрабатываются</h2>
+        <p>Оператор обрабатывает персональные данные, которые Пользователь предоставляет
+        добровольно при заполнении форм на Сайте:</p>
+        <ul>
+          <li>имя (или иное обращение, указанное Пользователем);</li>
+          <li>номер телефона;</li>
+          <li>адрес электронной почты — если Пользователь указал его самостоятельно;</li>
+          <li>сведения о задаче, которые Пользователь сообщил в свободной форме
+              (форма бизнеса, налоговый режим, число сотрудников и подобное).</li>
+        </ul>
+        <p>Также автоматически собираются обезличенные технические данные с помощью
+        сервиса Яндекс.Метрика: IP-адрес, данные файлов cookie, сведения о браузере
+        и устройстве, дата и время обращения, адреса запрашиваемых страниц, источник перехода.
+        Специальные категории персональных данных и биометрические персональные данные
+        Оператором не обрабатываются.</p>
+
+        <h2>4. Цели обработки</h2>
+        <ul>
+          <li>обработка заявок и обращений Пользователя, связь с ним по указанным контактам;</li>
+          <li>консультирование, подготовка коммерческого предложения и расчёта стоимости услуг;</li>
+          <li>заключение и исполнение договора на оказание бухгалтерских услуг;</li>
+          <li>анализ посещаемости и улучшение работы Сайта (в обезличенном виде).</li>
+        </ul>
+
+        <h2>5. Правовые основания обработки</h2>
+        <ul>
+          <li>согласие Пользователя на обработку персональных данных (п. 1 ч. 1 ст. 6 152-ФЗ),
+              которое выражается проставлением отметки в форме на Сайте;</li>
+          <li>исполнение договора, стороной которого является Пользователь
+              (п. 5 ч. 1 ст. 6 152-ФЗ);</li>
+          <li>Федеральный закон № 152-ФЗ, Гражданский кодекс РФ.</li>
+        </ul>
+
+        <h2>6. Порядок и условия обработки</h2>
+        <p>Обработка осуществляется смешанным способом (с использованием средств
+        автоматизации и без них) и включает сбор, запись, систематизацию, накопление,
+        хранение, уточнение, использование, передачу (в случаях, указанных ниже),
+        удаление и уничтожение.</p>
+        <p>Базы данных, содержащие персональные данные граждан Российской Федерации,
+        расположены на территории Российской Федерации (ч. 5 ст. 18 152-ФЗ). Хостинг Сайта
+        предоставляется ООО «Бегет», серверы расположены в Российской Федерации.</p>
+        <p>Оператор не продаёт и не передаёт персональные данные третьим лицам, за исключением
+        случаев, предусмотренных законодательством, а также передачи данных
+        ООО «Яндекс» (Яндекс.Метрика) в объёме обезличенной статистики посещений
+        и ООО «Бегет» как поставщику услуг хостинга и электронной почты.
+        Трансграничная передача персональных данных не осуществляется.</p>
+
+        <h2>7. Сроки хранения</h2>
+        <p>Персональные данные хранятся не дольше, чем этого требуют цели обработки:</p>
+        <ul>
+          <li>данные из заявок, не приведших к заключению договора, — до 1 года
+              с даты обращения;</li>
+          <li>данные клиентов по заключённым договорам — в течение срока действия договора
+              и 5 лет после его прекращения, если иной срок не установлен законодательством
+              о бухгалтерском учёте и архивном деле;</li>
+          <li>данные Яндекс.Метрики — в соответствии со сроками, установленными
+              оператором сервиса.</li>
+        </ul>
+        <p>По достижении целей обработки или при отзыве согласия данные уничтожаются
+        в срок, не превышающий 30 дней.</p>
+
+        <h2>8. Права Пользователя</h2>
+        <p>Пользователь вправе:</p>
+        <ul>
+          <li>получать сведения об обработке своих персональных данных;</li>
+          <li>требовать уточнения, блокирования или уничтожения данных, если они неполные,
+              устаревшие, неточные либо получены незаконно;</li>
+          <li>отозвать согласие на обработку персональных данных в любой момент;</li>
+          <li>обжаловать действия Оператора в Роскомнадзоре или в судебном порядке.</li>
+        </ul>
+        <p>Для реализации прав необходимо направить обращение на адрес электронной почты
+        svetlanailyushenkova@gmail.com с указанием фамилии, имени, отчества и контактных
+        данных. Ответ направляется в течение 30 дней с даты получения обращения.
+        Отзыв согласия направляется тем же способом; после отзыва обработка прекращается,
+        за исключением случаев, когда она продолжается на ином законном основании.</p>
+
+        <h2>9. Файлы cookie</h2>
+        <p>Сайт использует файлы cookie — небольшие текстовые файлы, сохраняемые в браузере.
+        Технически необходимые cookie обеспечивают работу Сайта и сохранение выбора
+        Пользователя. Аналитические cookie сервиса Яндекс.Метрика применяются только
+        после получения согласия Пользователя через баннер при первом посещении.</p>
+        <p>До получения согласия аналитические сервисы не загружаются. Пользователь может
+        отказаться от аналитических cookie, нажав «Только необходимые» в баннере,
+        а также удалить или запретить cookie в настройках браузера — при этом отдельные
+        функции Сайта могут работать некорректно.</p>
+
+        <h2>10. Меры защиты</h2>
+        <p>Оператор принимает правовые, организационные и технические меры для защиты
+        персональных данных от неправомерного доступа, уничтожения, изменения и
+        распространения: передача данных с Сайта осуществляется по защищённому протоколу
+        HTTPS, доступ к данным имеет только Оператор, служебные файлы закрыты
+        от публичного доступа.</p>
+
+        <h2>11. Изменение Политики</h2>
+        <p>Оператор вправе изменять настоящую Политику. Новая редакция вступает в силу
+        с момента её размещения на Сайте, если иное не предусмотрено новой редакцией.
+        Действующая редакция всегда доступна по адресу buh-online32.ru в разделе
+        «Политика конфиденциальности».</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= СОГЛАСИЕ НА ОБРАБОТКУ ПДн ================= -->
+<div class="page" id="p-soglasie">
+  <section class="pinch">
+    <div class="wrap">
+      <div class="sec-head"><h1>Согласие на обработку персональных данных</h1></div>
+      <div class="plate legal">
+        <p>Проставляя отметку в поле «Согласен на обработку персональных данных» и отправляя
+        форму на сайте buh-online32.ru, я, субъект персональных данных, действуя свободно,
+        своей волей и в своём интересе, даю согласие Индивидуальному предпринимателю
+        Ильющенковой Светлане Викторовне (ИНН 325002306080, ОГРНИП 324320000025364,
+        адрес: 241050, г. Брянск, ул. Фокина, д. 195, кв. 268) на обработку моих
+        персональных данных на следующих условиях.</p>
+
+        <h2>Перечень данных</h2>
+        <p>Имя (обращение), номер телефона, адрес электронной почты (если указан),
+        а также сведения о моей задаче, сообщённые мной в свободной форме.</p>
+
+        <h2>Цели обработки</h2>
+        <p>Обработка и рассмотрение моего обращения, связь со мной по указанным контактам,
+        консультирование, подготовка расчёта стоимости и коммерческого предложения,
+        заключение и исполнение договора на оказание бухгалтерских услуг.</p>
+
+        <h2>Перечень действий</h2>
+        <p>Сбор, запись, систематизация, накопление, хранение, уточнение (обновление,
+        изменение), извлечение, использование, блокирование, удаление и уничтожение
+        персональных данных, совершаемые как с использованием средств автоматизации,
+        так и без них.</p>
+
+        <h2>Срок действия и порядок отзыва</h2>
+        <p>Согласие действует до достижения целей обработки либо до момента его отзыва.
+        Согласие может быть отозвано в любой момент путём направления заявления
+        на адрес svetlanailyushenkova@gmail.com. При отзыве согласия обработка
+        прекращается, а данные уничтожаются в срок, не превышающий 30 дней, если
+        отсутствуют иные законные основания для их обработки.</p>
+
+        <p class="muted">Подробные условия обработки данных изложены в
+        <a href="#/politika" data-link>Политике конфиденциальности</a>.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
 
 </main>
 
@@ -1693,8 +1914,8 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
       </div>
     </div>
     <div class="foot-bottom">
-      <span>Реквизиты ИП подставим из документов.</span>
-      <span>Политика конфиденциальности и согласие на обработку данных</span>
+      <span>ИП Ильющенкова Светлана Викторовна · ИНН 325002306080 · ОГРНИП 324320000025364</span>
+      <a href="#/politika" data-link>Политика конфиденциальности</a> · <a href="#/soglasie" data-link>Согласие на обработку данных</a>
     </div>
   </div>
 </footer>
@@ -1703,7 +1924,8 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
 (function(){
   var routes = {
     '/':'p-home','/uslugi':'p-uslugi','/dlya-ip':'p-dlya-ip','/dlya-ooo':'p-dlya-ooo',
-    '/nds-2026':'p-nds-2026','/tarify':'p-tarify','/blog':'p-blog','/kontakty':'p-kontakty'
+    '/nds-2026':'p-nds-2026','/tarify':'p-tarify','/blog':'p-blog','/kontakty':'p-kontakty',
+    '/politika':'p-politika','/soglasie':'p-soglasie'
   };
   var menu = document.getElementById('menu');
 
@@ -1726,6 +1948,8 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
     '/nds-2026':['НДС на УСН с 2026 года: порог 20 млн, ставки 5 и 7 процентов','Проверьте, попадаете ли вы под НДС на упрощёнке: калькулятор порога, выбор ставки, счета-фактуры и декларация. Разбор по документам.'],
     '/tarify':['Пакеты бухгалтерского сопровождения: цены от 5 000 ₽ в месяц','Старт от 5 000 ₽, полное ведение от 15 000 ₽, контроль от 10 000 ₽ в месяц, разовые задачи 1 000 ₽ в час. Калькулятор состава работ.'],
     '/blog':['Блог о бухгалтерии и налогах для малого бизнеса','Разборы изменений в налогах, инструкции для ИП и ООО, налоговый календарь. Простым языком, без воды.'],
+    '/politika':['Политика конфиденциальности','Как мы обрабатываем и защищаем персональные данные посетителей сайта.'],
+    '/soglasie':['Согласие на обработку персональных данных','Условия, на которых обрабатываются данные из форм на сайте.'],
     '/kontakty':['Контакты бухгалтерии в Брянске: телефон, почта, адрес','Телефон +7 910 336-52-74, Брянск, улица Фокина 195. Первая проверка учёта бесплатна.']
   };
   function render(){
@@ -1902,10 +2126,35 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
     document.getElementById('qNext').addEventListener('click', function(){ slide(1); });
   }
 
-  /* ---- формы ---- */
-  function bindForm(formId, okId, fields){
+  /* ---- формы: реальная отправка на send.php ---- */
+  var formLoadedAt = Date.now();
+
+  function collectCalcDetails(){
+    // состав работ, собранный калькулятором на /tarify — кладём в заявку
+    var out = [];
+    var map = [['c-form','Форма бизнеса'],['c-rezhim','Налоговый режим'],
+               ['c-sotr','Сотрудников'],['c-doc','Документов в месяц'],['c-nds','Оборот за прошлый год']];
+    map.forEach(function(pair){
+      var el = document.getElementById(pair[0]);
+      if(!el) return;
+      var val = el.tagName === 'SELECT' ? (el.options[el.selectedIndex] || {}).text : el.value;
+      if(val) out.push(pair[1] + ': ' + val);
+    });
+    return out.join('\n');
+  }
+
+  function bindForm(formId, okId, fields, opts){
     var form = document.getElementById(formId);
     if(!form) return;
+    opts = opts || {};
+
+    // honeypot — скрытое поле, видят только боты
+    var hp = document.createElement('input');
+    hp.type = 'text'; hp.name = 'company'; hp.tabIndex = -1; hp.autocomplete = 'off';
+    hp.setAttribute('aria-hidden','true');
+    hp.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0';
+    form.appendChild(hp);
+
     form.addEventListener('submit', function(e){
       e.preventDefault();
       var valid = true;
@@ -1920,28 +2169,122 @@ footer{margin-top:var(--s7);background:var(--foot-grad);color:var(--foot-ink);
       if(agree && !agree.checked){ agree.parentElement.style.color = '#b3253c'; valid = false; }
       else if(agree){ agree.parentElement.style.color = ''; }
       if(!valid) return;
+
       var btn = form.querySelector('button[type=submit]');
+      var lbl = btn.querySelector('.lbl');
+      var lblWas = lbl ? lbl.textContent : '';
       btn.classList.add('loading');
-      btn.querySelector('.lbl').textContent = 'Отправляю';
-      setTimeout(function(){
+      btn.disabled = true;
+      if(lbl) lbl.textContent = 'Отправляю';
+
+      var nameEl  = document.getElementById(fields[0].input);
+      var phoneEl = document.getElementById(fields[1].input);
+      var topicEl = opts.topic ? document.getElementById(opts.topic) : null;
+      var textEl  = opts.comment ? document.getElementById(opts.comment) : null;
+
+      var payload = {
+        form: opts.title || formId,
+        name: nameEl ? nameEl.value.trim() : '',
+        phone: phoneEl ? phoneEl.value.trim() : '',
+        topic: topicEl ? (topicEl.options ? topicEl.options[topicEl.selectedIndex].text : topicEl.value) : '',
+        comment: textEl ? textEl.value.trim() : '',
+        details: opts.withCalc ? collectCalcDetails() : '',
+        page: location.hash || '/',
+        company: hp.value,
+        elapsed: Math.round((Date.now() - formLoadedAt) / 1000)
+      };
+
+      fetch('send.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      })
+      .then(function(r){ return r.json().catch(function(){ return {ok:false, msg:'Ошибка сервера'}; }); })
+      .then(function(res){
         btn.classList.remove('loading');
-        form.style.display = 'none';
-        document.getElementById(okId).classList.add('show');
-      }, 900);
+        btn.disabled = false;
+        if(lbl) lbl.textContent = lblWas;
+        if(res && res.ok){
+          form.style.display = 'none';
+          document.getElementById(okId).classList.add('show');
+          // цель Метрики — по ней считаются конверсии Директа
+          if(typeof ym === 'function'){ ym(112066374, 'reachGoal', 'zayavka'); }
+        } else {
+          alert((res && res.msg) ? res.msg : 'Не удалось отправить. Позвоните: +7 910 336-52-74');
+        }
+      })
+      .catch(function(){
+        btn.classList.remove('loading');
+        btn.disabled = false;
+        if(lbl) lbl.textContent = lblWas;
+        alert('Не удалось отправить заявку. Позвоните, пожалуйста: +7 910 336-52-74');
+      });
     });
   }
+
   bindForm('mainForm','mainOk',[
     {wrap:'m-name', input:'m-name-i'},
     {wrap:'m-phone', input:'m-phone-i', check:function(i){ return i.value.replace(/\D/g,'').length >= 10; }}
-  ]);
+  ], {title:'Контакты', topic:'m-type', comment:'m-text'});
+
   bindForm('calcForm','calcOk',[
     {wrap:'cf-name', input:'cf-name-i'},
     {wrap:'cf-phone', input:'cf-phone-i', check:function(i){ return i.value.replace(/\D/g,'').length >= 10; }}
-  ]);
+  ], {title:'Калькулятор состава работ', withCalc:true});
+
   bindForm('usForm','usOk',[
     {wrap:'us-name', input:'us-name-i'},
     {wrap:'us-phone', input:'us-phone-i', check:function(i){ return i.value.replace(/\D/g,'').length >= 10; }}
-  ]);
+  ], {title:'Услуги — не нашли задачу'});
 
+  /* ---- цели Метрики: звонок, мессенджер, почта ---- */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a');
+    if(!a || typeof ym !== 'function') return;
+    var href = a.getAttribute('href') || '';
+    if(href.indexOf('tel:') === 0)            ym(112066374, 'reachGoal', 'click_phone');
+    else if(href.indexOf('mailto:') === 0)    ym(112066374, 'reachGoal', 'click_email');
+    else if(/wa\.me|t\.me|api\.whatsapp/.test(href)) ym(112066374, 'reachGoal', 'click_messenger');
+  });
+
+
+})();
+</script>
+
+<!-- Баннер согласия на cookie. До нажатия «Принять» аналитика не загружается (152-ФЗ). -->
+<div id="cookie" role="dialog" aria-live="polite" aria-label="Использование файлов cookie">
+  <div class="in">
+    <p>Мы используем файлы cookie, чтобы сайт работал корректно, и сервис Яндекс.Метрика —
+    чтобы понимать, какие страницы полезны посетителям. Аналитика включается только с вашего
+    согласия. Подробнее — в <a href="#/politika" data-link>политике конфиденциальности</a>.</p>
+    <div class="acts">
+      <button type="button" id="ckOnly">Только необходимые</button>
+      <button type="button" id="ckAll" class="primary">Принять</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var KEY = 'cookie_consent_v1';
+  var box = document.getElementById('cookie');
+  var saved;
+  try { saved = localStorage.getItem(KEY); } catch(e) { saved = null; }
+
+  function decide(value){
+    try { localStorage.setItem(KEY, value); } catch(e) {}
+    box.classList.remove('show');
+    if (value === 'all' && typeof loadMetrika === 'function') loadMetrika();
+  }
+
+  if (saved === 'all') {
+    // согласие уже было получено ранее — подключаем аналитику молча
+    if (typeof loadMetrika === 'function') loadMetrika();
+  } else if (saved !== 'necessary') {
+    box.classList.add('show');
+  }
+
+  document.getElementById('ckAll').addEventListener('click', function(){ decide('all'); });
+  document.getElementById('ckOnly').addEventListener('click', function(){ decide('necessary'); });
 })();
 </script>

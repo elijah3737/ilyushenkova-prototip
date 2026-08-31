@@ -1,0 +1,47 @@
+# --- Принудительный HTTPS ---
+# Без этого сайт открывается и по http, и форма с персональными данными
+# уходит незашифрованной. Плюс http/https — это два разных адреса для поисковика.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
+
+# --- Заголовки безопасности ---
+<IfModule mod_headers.c>
+    # браузер запоминает, что сюда ходят только по https
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    # запрет вставки сайта в чужой iframe (защита от кликджекинга)
+    Header always set X-Frame-Options "SAMEORIGIN"
+    # браузер не угадывает тип файла — меньше шансов на подмену
+    Header always set X-Content-Type-Options "nosniff"
+    # не передаём полный адрес страницы при переходе на чужой сайт
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # отключаем ненужные сайту возможности устройства
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+</IfModule>
+
+# --- Закрываем служебные файлы ---
+# В leads.log лежат имена и телефоны — персональные данные, наружу нельзя (152-ФЗ).
+<FilesMatch "\.(log|env|md|json|bak|sql)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Листинг каталогов не нужен
+Options -Indexes
+
+# --- Кэш статики: шрифты и картинки меняются редко ---
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>

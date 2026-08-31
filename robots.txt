@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# служебное — в индекс не нужно
+Disallow: /send.php
+Disallow: /cgi-bin/
+Disallow: /*.log$
+
+Sitemap: https://buh-online32.ru/sitemap.xml

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Сайт — одностраничное приложение с хеш-навигацией (#/uslugi и т.п.).
+     Поисковые системы отбрасывают часть адреса после #, поэтому в карте
+     указан единственный реальный серверный адрес. Чтобы разделы
+     индексировались отдельными страницами, нужен переход на адреса без #
+     (History API + перезапись в .htaccess) — это отдельная задача. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://buh-online32.ru/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
